@@ -1,5 +1,6 @@
 package com.example.androidfundamental
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -35,11 +36,7 @@ class CreateUserActivity : AppCompatActivity() {
     }
 
     fun onClick(view: View) {
-        var string = username.text.toString()
-        Toast.makeText(
-            application, "User " + string + " created. Gender: " + getGender(male),
-            Toast.LENGTH_LONG
-        ).show()
+      finish()
     }
 
 
@@ -48,5 +45,13 @@ class CreateUserActivity : AppCompatActivity() {
             true -> return "male"
             false -> return "female"
         }
+    }
+
+    override fun finish() {
+        val intent = Intent()
+        intent.putExtra(User.USER_NAME, username.text.toString())
+        intent.putExtra(User.USER_GENDER, male)
+        setResult(RESULT_OK, intent)
+        super.finish()
     }
 }
