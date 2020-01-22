@@ -3,13 +3,12 @@ package com.example.androidfundamental
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_user_overview.*
 
-class UserOverViewActivity : AppCompatActivity() {
-    lateinit var user: User
 
-    companion object {
+class UserOverViewActivity : TracerActivity() {
+    private lateinit var user : User
+    companion object{
         private const val SUB_ACTIVITY_CREATE_USER = 10
     }
 
@@ -31,6 +30,7 @@ class UserOverViewActivity : AppCompatActivity() {
             updateUserInterface()
         }
     }
+
 
     private fun updateUserInterface() {
         username.text = user.name
