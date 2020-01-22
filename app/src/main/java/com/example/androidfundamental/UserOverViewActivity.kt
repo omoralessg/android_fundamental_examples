@@ -9,11 +9,9 @@ import kotlinx.android.synthetic.main.activity_user_overview.*
 
 
 class UserOverViewActivity : AppCompatActivity() {
-
+    private lateinit var user : User
     companion object{
-        private val SUB_ACTIVITY_CREATE_USER = 10
-        lateinit var user : User
-
+        private const val SUB_ACTIVITY_CREATE_USER = 10
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
