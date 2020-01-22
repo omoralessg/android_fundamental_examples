@@ -4,9 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.RadioGroup
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_create_user.*
 
-class CreateUserActivity :  TracerActivity() {
+class CreateUserActivity :  AppCompatActivity() {
 
     private var male = true
 

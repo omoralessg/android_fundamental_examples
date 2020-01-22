@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_user_overview.*
 
 
-class UserOverViewActivity : AppCompatActivity() {
+class UserOverViewActivity : TracerActivity() {
     private lateinit var user : User
     companion object{
         private const val SUB_ACTIVITY_CREATE_USER = 10
