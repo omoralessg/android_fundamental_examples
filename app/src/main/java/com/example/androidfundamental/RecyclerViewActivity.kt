@@ -1,4 +1,5 @@
 package com.example.androidfundamental
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -17,7 +18,7 @@ class RecyclerViewActivity : AppCompatActivity() {
             listOf("Element1", "Element2", "Element3", "Element4", "Element5").toMutableList()
         recyclerAdapter = MyAdapter(stringList)
 
-        val swipH = object : SwipeToDeleteCallback(application) {
+        val swipH = object : SwipeToDeleteCallback(this) {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val adapter = recyclerView.adapter as MyAdapter
                 adapter.removeAt(viewHolder.adapterPosition)

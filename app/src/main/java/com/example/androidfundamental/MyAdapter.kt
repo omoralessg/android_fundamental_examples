@@ -27,10 +27,11 @@ class MyAdapter(var values: MutableList<String>) : RecyclerView.Adapter<MyAdapte
         notifyItemRemoved(position)
     }
 
-    inner class MyViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+    inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        private var firstLine: TextView = view.findViewById(R.id.firstLine)
+        private val secondLine: TextView = view.findViewById(R.id.secondLine)
+
         fun bind(string: String) {
-            val firstLine = view.findViewById<TextView>(R.id.firstLine)
-            val secondLine = view.findViewById<TextView>(R.id.secondLine)
             firstLine.text = string
             secondLine.text = string
         }
