@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Android Fundamental</string>
+    <string name="pr1_2_3">PR 1, 2, 3</string>
+    <string name="pr4">RecyclerView</string>
 </resources>

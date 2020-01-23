@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TracerActivity"></activity>
+        <activity android:name=".UserOverViewActivity"></activity>
+        <activity android:name=".RecyclerViewActivity" />
+        <activity android:name=".TracerActivity" />
         <activity android:name=".CreateUserActivity" />
-        <activity android:name=".UserOverViewActivity">
+        <activity android:name=".MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
