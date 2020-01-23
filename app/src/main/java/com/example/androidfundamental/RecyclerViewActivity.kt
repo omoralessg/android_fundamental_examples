@@ -1,29 +1,23 @@
 package com.example.androidfundamental
-
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.SimpleAdapter
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_recycler_view.*
 
-
-
 class RecyclerViewActivity : AppCompatActivity() {
     private lateinit var recyclerAdapter: MyAdapter
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_view)
 
-        val stringList = listOf("Element1", "Element2", "Element3", "Element4",  "Element5").toMutableList()
+        val stringList =
+            listOf("Element1", "Element2", "Element3", "Element4", "Element5").toMutableList()
         recyclerAdapter = MyAdapter(stringList)
 
-        val swipH = object : SwipeToDeleteCallback(application){
+        val swipH = object : SwipeToDeleteCallback(application) {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val adapter = recyclerView.adapter as MyAdapter
                 adapter.removeAt(viewHolder.adapterPosition)
