@@ -3,6 +3,7 @@ package com.example.androidfundamental
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.androidfundamental.databindingexample.view.DataBindingExampleActivity
 import kotlinx.android.synthetic.main.activity_menu.*
 
 class MenuActivity : AppCompatActivity() {
@@ -18,5 +19,11 @@ class MenuActivity : AppCompatActivity() {
         btn_recycler.setOnClickListener {
             startActivity(Intent(this, RecyclerViewActivity::class.java))
         }
+
+        btn_databinding.setOnClickListener {
+            startActivity(Intent(this, DataBindingExampleActivity::class.java))
+        }
+
+
     }
 }
