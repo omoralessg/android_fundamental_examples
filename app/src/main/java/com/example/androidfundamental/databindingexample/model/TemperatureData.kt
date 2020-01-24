@@ -9,4 +9,3 @@ class TemperatureData(loc: String, cel: String) : BaseObservable() {
     @get:Bindable
     var location: String = loc
 }
-
