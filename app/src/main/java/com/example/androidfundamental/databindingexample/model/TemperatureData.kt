@@ -2,22 +2,12 @@ package com.example.androidfundamental.databindingexample.model
 
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
+import androidx.databinding.Observable
+import com.example.androidfundamental.BR
 
 class TemperatureData(loc: String, cel: String) : BaseObservable() {
-    var location: String = loc
+    @get:Bindable
     var celsius: String = cel
-
-    @Bindable
-    fun getlocation(): String {
-        return location
-    }
-
-    @Bindable
-    fun getcelsius(): String {
-        return celsius
-    }
-
+    @get:Bindable
+    var location: String = loc
 }
-
-
-
