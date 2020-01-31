@@ -3,4 +3,10 @@
     <string name="pr1_2_3">PR 1, 2, 3</string>
     <string name="pr4">RecyclerView</string>
     <string name="databinding">DataBinding</string>
+    <string name="spinner">Spinner</string>
+    <string-array name="operating_systems">
+        <item >Ubuntu</item>
+        <item >Android</item>
+        <item >iOS</item>
+    </string-array>
 </resources>
