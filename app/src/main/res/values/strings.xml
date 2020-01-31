@@ -4,4 +4,5 @@
     <string name="pr4">RecyclerView</string>
     <string name="databinding">DataBinding</string>
     <string name="view_model">View Model</string>
+    <string name="list_view">List View</string>
 </resources>
