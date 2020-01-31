@@ -1,16 +1,12 @@
 package com.example.androidfundamental.viewmodelexample
-
 import java.util.*
 
-
-class Task
-    (
+class Task(
     val id: Long,
     var summary: String,
     var description: String,
     var done: Boolean
 ) {
-
     class TaskBuilder {
         private var id: Long = 0
         private var summary = ""
@@ -61,5 +57,4 @@ class Task
             return TaskBuilder()
         }
     }
-
 }
