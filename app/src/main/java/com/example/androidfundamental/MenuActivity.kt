@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.androidfundamental.databindingexample.view.DataBindingExampleActivity
+import com.example.androidfundamental.viewmodelexample.TaskActivity
 import kotlinx.android.synthetic.main.activity_menu.*
 
 class MenuActivity : AppCompatActivity() {
@@ -24,6 +25,8 @@ class MenuActivity : AppCompatActivity() {
             startActivity(Intent(this, DataBindingExampleActivity::class.java))
         }
 
-
+        btn_view_model.setOnClickListener {
+            startActivity(Intent(this, TaskActivity::class.java))
+        }
     }
 }
