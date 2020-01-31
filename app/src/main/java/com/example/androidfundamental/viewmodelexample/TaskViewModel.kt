@@ -1,9 +1,7 @@
 package com.example.androidfundamental.viewmodelexample
-
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-
 
 class TaskViewModel : ViewModel() {
     private var tasks: MutableLiveData<List<Task>>? = null
