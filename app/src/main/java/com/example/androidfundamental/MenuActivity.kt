@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.androidfundamental.databindingexample.view.DataBindingExampleActivity
 import com.example.androidfundamental.spinner_instance_state.SpinnerActivity
+import com.example.androidfundamental.viewmodelexample.TaskActivity
 import kotlinx.android.synthetic.main.activity_menu.*
 
 class MenuActivity : AppCompatActivity() {
@@ -25,6 +26,8 @@ class MenuActivity : AppCompatActivity() {
             startActivity(Intent(this, SpinnerActivity::class.java))
         }
 
-
+        btn_view_model.setOnClickListener {
+            startActivity(Intent(this, TaskActivity::class.java))
+        }
     }
 }
