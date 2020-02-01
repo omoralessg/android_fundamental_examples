@@ -1,12 +1,12 @@
 package com.example.androidfundamental.listviewandactivityexample
 
-import android.R
 import android.app.ListActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Toast
+import com.example.androidfundamental.R
 
 
 class ListExampleActivity : ListActivity() {
@@ -17,9 +17,10 @@ class ListExampleActivity : ListActivity() {
             "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
             "Linux", "OS/2"
         )
+        // use your custom layout
         val adapter = ArrayAdapter(
             this,
-            R.layout.simple_list_item_1, values
+            R.layout.rowlayout, R.id.label, values
         )
         listAdapter = adapter
     }
