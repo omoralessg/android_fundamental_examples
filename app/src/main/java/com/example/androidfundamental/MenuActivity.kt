@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.androidfundamental.databindingexample.view.DataBindingExampleActivity
 import com.example.androidfundamental.listviewandactivityexample.ListExampleActivity
+import com.example.androidfundamental.listviewandactivityexample.SelectionSingleView
 import com.example.androidfundamental.viewmodelexample.TaskActivity
 import kotlinx.android.synthetic.main.activity_menu.*
 
@@ -31,6 +32,9 @@ class MenuActivity : AppCompatActivity() {
         }
         btn_list_view.setOnClickListener {
             startActivity(Intent(this, ListExampleActivity::class.java))
+        }
+        btn_selection_single_view.setOnClickListener {
+            startActivity(Intent(this, SelectionSingleView::class.java))
         }
 
 
