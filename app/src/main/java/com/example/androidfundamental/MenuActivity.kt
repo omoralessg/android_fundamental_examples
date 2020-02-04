@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.example.androidfundamental.databindingexample.view.DataBindingExampleActivity
 import com.example.androidfundamental.listviewandactivityexample.ListExampleActivity
 import com.example.androidfundamental.listviewandactivityexample.SelectionSingleView
+import com.example.androidfundamental.listviewandactivityexample.UndoBarActivity
 import com.example.androidfundamental.viewmodelexample.TaskActivity
 import kotlinx.android.synthetic.main.activity_menu.*
 
@@ -36,7 +37,8 @@ class MenuActivity : AppCompatActivity() {
         btn_selection_single_view.setOnClickListener {
             startActivity(Intent(this, SelectionSingleView::class.java))
         }
-
-
+        btn_undo.setOnClickListener {
+            startActivity(Intent(this, UndoBarActivity::class.java))
+        }
     }
 }

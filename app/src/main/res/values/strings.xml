@@ -7,4 +7,5 @@
     <string name="list_view">List View</string>
     <string name="item_action">item_action</string>
     <string name="selection">selection</string>
+    <string name="undo">Undo</string>
 </resources>
