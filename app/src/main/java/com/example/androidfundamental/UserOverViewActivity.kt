@@ -29,6 +29,7 @@ class UserOverViewActivity : TracerActivity() {
             user = name?.let { gender?.let { it1 -> User(it, it1) } }!!
             updateUserInterface()
         }
+        super.onActivityResult(requestCode, resultCode, data)
     }
 
 
