@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.example.androidfundamental.databindingexample.view.DataBindingExampleActivity
 import com.example.androidfundamental.spinner_instance_state.SpinnerActivity
 import com.example.androidfundamental.viewmodelexample.TaskActivity
+import com.example.androidfundamental.listviewandactivityexample.*
 import kotlinx.android.synthetic.main.activity_menu.*
 
 class MenuActivity : AppCompatActivity() {
@@ -26,6 +27,24 @@ class MenuActivity : AppCompatActivity() {
             startActivity(Intent(this, SpinnerActivity::class.java))
         }
 
+        btn_view_model.setOnClickListener {
+            startActivity(Intent(this, TaskActivity::class.java))
+        }
+        btn_list_view.setOnClickListener {
+            startActivity(Intent(this, ListExampleActivity::class.java))
+        }
+        btn_selection_single_view.setOnClickListener {
+            startActivity(Intent(this, SelectionSingleView::class.java))
+        }
+        btn_undo.setOnClickListener {
+            startActivity(Intent(this, UndoBarActivity::class.java))
+        }
+        btn_two_list_items.setOnClickListener {
+            startActivity(Intent(this, TwoListItemsActivity::class.java))
+        }
+        btn_expandable_list_view.setOnClickListener {
+            startActivity(Intent(this, ExpandableListActivity::class.java))
+        }
         btn_view_model.setOnClickListener {
             startActivity(Intent(this, TaskActivity::class.java))
         }

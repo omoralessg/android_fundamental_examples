@@ -4,6 +4,13 @@
     <string name="pr4">RecyclerView</string>
     <string name="databinding">DataBinding</string>
     <string name="view_model">View Model</string>
+    <string name="list_view">List View</string>
+    <string name="item_action">item_action</string>
+    <string name="selection">selection</string>
+    <string name="undo">Undo</string>
+    <string name="two_items">Two Items</string>
+    <string name="hello_world">hello</string>
+    <string name="expandable_list">Expandable list</string>
     <string name="spinner">Spinner</string>
     <string-array name="operating_systems">
         <item >Ubuntu</item>
