@@ -16,7 +16,7 @@ class DataBindingExampleActivity : AppCompatActivity(), View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_data_binding_example)
+       // setContentView(R.layout.activity_data_binding_example)
         dataBindingExamplePresenter = DataBindingExamplePresenter(this)
         val binding: ActivityDataBindingExampleBinding =
             DataBindingUtil.setContentView(this, R.layout.activity_data_binding_example)

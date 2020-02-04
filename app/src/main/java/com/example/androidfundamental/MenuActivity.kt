@@ -4,8 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.androidfundamental.databindingexample.view.DataBindingExampleActivity
-import com.example.androidfundamental.listviewandactivityexample.*
+import com.example.androidfundamental.spinner_instance_state.SpinnerActivity
 import com.example.androidfundamental.viewmodelexample.TaskActivity
+import com.example.androidfundamental.listviewandactivityexample.*
 import kotlinx.android.synthetic.main.activity_menu.*
 
 class MenuActivity : AppCompatActivity() {
@@ -13,7 +14,6 @@ class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
-
         button_pr123.setOnClickListener {
             startActivity(Intent(this, UserOverViewActivity::class.java))
         }
@@ -22,6 +22,9 @@ class MenuActivity : AppCompatActivity() {
         }
         btn_databinding.setOnClickListener {
             startActivity(Intent(this, DataBindingExampleActivity::class.java))
+        }
+        btn_spinner.setOnClickListener{
+            startActivity(Intent(this, SpinnerActivity::class.java))
         }
 
         btn_view_model.setOnClickListener {
@@ -41,6 +44,9 @@ class MenuActivity : AppCompatActivity() {
         }
         btn_expandable_list_view.setOnClickListener {
             startActivity(Intent(this, ExpandableListActivity::class.java))
+        }
+        btn_view_model.setOnClickListener {
+            startActivity(Intent(this, TaskActivity::class.java))
         }
     }
 }

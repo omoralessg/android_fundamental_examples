@@ -96,4 +96,14 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_selection_single_view"
         app:layout_constraintEnd_toStartOf="@+id/btn_two_list_items"
         app:layout_constraintStart_toEndOf="@+id/btn_undo" />
+
+    <Button
+        android:id="@+id/btn_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_databinding" />
 </androidx.constraintlayout.widget.ConstraintLayout>

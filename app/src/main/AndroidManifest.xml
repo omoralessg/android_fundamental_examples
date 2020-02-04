@@ -16,6 +16,7 @@
         <activity android:name=".listviewandactivityexample.ListExampleActivity" />
         <activity android:name=".viewmodelexample.TaskActivity" />
         <activity android:name=".databindingexample.view.DataBindingExampleActivity" />
+        <activity android:name=".spinner_instance_state.SpinnerActivity"></activity>
         <activity android:name=".UserOverViewActivity" />
         <activity android:name=".RecyclerViewActivity" />
         <activity android:name=".TracerActivity" />
