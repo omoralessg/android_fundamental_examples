@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".listviewandactivityexample.UndoBarActivity"></activity>
-        <activity android:name=".listviewandactivityexample.TwoListItemsActivity"></activity>
+        <activity android:name=".listviewandactivityexample.ExpandableListActivity"></activity>
+        <activity android:name=".listviewandactivityexample.UndoBarActivity" />
+        <activity android:name=".listviewandactivityexample.TwoListItemsActivity" />
         <activity android:name=".listviewandactivityexample.SelectionSingleView" />
         <activity android:name=".listviewandactivityexample.ListExampleActivity" />
         <activity android:name=".viewmodelexample.TaskActivity" />

@@ -4,10 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.androidfundamental.databindingexample.view.DataBindingExampleActivity
-import com.example.androidfundamental.listviewandactivityexample.ListExampleActivity
-import com.example.androidfundamental.listviewandactivityexample.SelectionSingleView
-import com.example.androidfundamental.listviewandactivityexample.TwoListItemsActivity
-import com.example.androidfundamental.listviewandactivityexample.UndoBarActivity
+import com.example.androidfundamental.listviewandactivityexample.*
 import com.example.androidfundamental.viewmodelexample.TaskActivity
 import kotlinx.android.synthetic.main.activity_menu.*
 
@@ -41,6 +38,9 @@ class MenuActivity : AppCompatActivity() {
         }
         btn_two_list_items.setOnClickListener {
             startActivity(Intent(this, TwoListItemsActivity::class.java))
+        }
+        btn_expandable_list_view.setOnClickListener {
+            startActivity(Intent(this, ExpandableListActivity::class.java))
         }
     }
 }

@@ -9,4 +9,6 @@
     <string name="selection">selection</string>
     <string name="undo">Undo</string>
     <string name="two_items">Two Items</string>
+    <string name="hello_world">hello</string>
+    <string name="expandable_list">Expandable list</string>
 </resources>
