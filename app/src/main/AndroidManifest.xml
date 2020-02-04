@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".listviewandactivityexample.UndoBarActivity"></activity>
+        <activity android:name=".listviewandactivityexample.TwoListItemsActivity"></activity>
         <activity android:name=".listviewandactivityexample.SelectionSingleView" />
         <activity android:name=".listviewandactivityexample.ListExampleActivity" />
         <activity android:name=".viewmodelexample.TaskActivity" />

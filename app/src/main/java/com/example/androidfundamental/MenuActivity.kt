@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.example.androidfundamental.databindingexample.view.DataBindingExampleActivity
 import com.example.androidfundamental.listviewandactivityexample.ListExampleActivity
 import com.example.androidfundamental.listviewandactivityexample.SelectionSingleView
+import com.example.androidfundamental.listviewandactivityexample.TwoListItemsActivity
 import com.example.androidfundamental.listviewandactivityexample.UndoBarActivity
 import com.example.androidfundamental.viewmodelexample.TaskActivity
 import kotlinx.android.synthetic.main.activity_menu.*
@@ -19,11 +20,9 @@ class MenuActivity : AppCompatActivity() {
         button_pr123.setOnClickListener {
             startActivity(Intent(this, UserOverViewActivity::class.java))
         }
-
         btn_recycler.setOnClickListener {
             startActivity(Intent(this, RecyclerViewActivity::class.java))
         }
-
         btn_databinding.setOnClickListener {
             startActivity(Intent(this, DataBindingExampleActivity::class.java))
         }
@@ -39,6 +38,9 @@ class MenuActivity : AppCompatActivity() {
         }
         btn_undo.setOnClickListener {
             startActivity(Intent(this, UndoBarActivity::class.java))
+        }
+        btn_two_list_items.setOnClickListener {
+            startActivity(Intent(this, TwoListItemsActivity::class.java))
         }
     }
 }
