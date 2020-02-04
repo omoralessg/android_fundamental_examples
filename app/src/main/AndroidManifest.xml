@@ -9,13 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".fragments.RssfeedActivity"></activity>
+        <activity android:name=".databindingexample.view.DataBindingExampleActivity"></activity>
         <activity android:name=".listviewandactivityexample.ExpandableListActivity"></activity>
         <activity android:name=".listviewandactivityexample.UndoBarActivity" />
         <activity android:name=".listviewandactivityexample.TwoListItemsActivity" />
         <activity android:name=".listviewandactivityexample.SelectionSingleView" />
         <activity android:name=".listviewandactivityexample.ListExampleActivity" />
         <activity android:name=".viewmodelexample.TaskActivity" />
-        <activity android:name=".databindingexample.view.DataBindingExampleActivity" />
         <activity android:name=".spinner_instance_state.SpinnerActivity"></activity>
         <activity android:name=".UserOverViewActivity" />
         <activity android:name=".RecyclerViewActivity" />

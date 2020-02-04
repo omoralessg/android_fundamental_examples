@@ -3,6 +3,10 @@
     <string name="pr1_2_3">PR 1, 2, 3</string>
     <string name="pr4">RecyclerView</string>
     <string name="databinding">DataBinding</string>
+    <string name="fragments">Fragments</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="view_model">View Model</string>
     <string name="list_view">List View</string>
     <string name="item_action">item_action</string>
