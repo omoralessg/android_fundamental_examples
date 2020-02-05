@@ -1,5 +1,6 @@
 package com.example.androidfundamental
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -22,6 +23,7 @@ class UserOverViewActivity : TracerActivity() {
         }
     }
 
+    @SuppressLint("MissingSuperCall")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode === SUB_ACTIVITY_CREATE_USER && resultCode === Activity.RESULT_OK) {
             val name = data?.getStringExtra(User.USER_NAME)
