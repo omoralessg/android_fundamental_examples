@@ -16,7 +16,8 @@ import com.example.androidfundamental.R
  */
 class ListFragment : Fragment() {
 
-    private var listener: OnItemSelectedListener? = null
+    private lateinit var listener: OnItemSelectedListener
+    //private var listener: OnItemSelectedListener? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,10 +27,9 @@ class ListFragment : Fragment() {
             container, false
         )
         val button: Button = view.findViewById(R.id.updateButton) as Button
-        button.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                updateDetail("testing")
-            }
+        button.setOnClickListener(View.OnClickListener {
+            updateDetail("testing")
+
         })
         return view
     }
@@ -39,7 +39,6 @@ class ListFragment : Fragment() {
     }
 
     override fun onAttach(context: Context) {
-        super.onAttach(context)
         listener = if (context is OnItemSelectedListener) {
             context
         } else {
@@ -48,14 +47,15 @@ class ListFragment : Fragment() {
                     .toString() + " must implement MyListFragment.OnItemSelectedListener"
             )
         }
+        super.onAttach(context)
     }
 
     // triggers update of the details fragment
-    fun updateDetail(uri: String) { // create fake data
+    private fun updateDetail(uri: String) { // create fake data
         val newTime =
             System.currentTimeMillis().toString() + uri
         // send data to activity
-        listener!!.onRssItemSelected(newTime)
+        listener.onRssItemSelected(newTime)
     }
 
 }

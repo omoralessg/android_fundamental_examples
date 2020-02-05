@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.androidfundamental.databindingexample.view.DataBindingExampleActivity
-import com.example.androidfundamental.fragments.MyListFragment
+import com.example.androidfundamental.fragments.RssfeedActivity
 import com.example.androidfundamental.spinner_instance_state.SpinnerActivity
 import com.example.androidfundamental.viewmodelexample.TaskActivity
 import com.example.androidfundamental.listviewandactivityexample.*
@@ -25,7 +25,7 @@ class MenuActivity : AppCompatActivity() {
             startActivity(Intent(this, DataBindingExampleActivity::class.java))
         }
         btn_fragments.setOnClickListener {
-            startActivity(Intent(this, MyListFragment::class.java))
+            startActivity(Intent(this, RssfeedActivity::class.java))
         }
 
         btn_spinner.setOnClickListener{

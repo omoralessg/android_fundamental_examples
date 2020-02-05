@@ -5,13 +5,12 @@
     android:layout_height="fill_parent"
     android:baselineAligned="false"
     android:orientation="horizontal" >
-
     <fragment
         android:id="@+id/listFragment"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="match_parent"
-        class="com.example.androidfundamental.fragments.MyListFragment"
+        class="com.example.androidfundamental.fragments.ListFragment"
         tools:layout="@layout/fragment_rsslist_overview">
     </fragment>
     <fragment
@@ -22,5 +21,4 @@
         class="com.example.androidfundamental.fragments.DetailFragment"
         tools:layout="@layout/fragment_rssitem_detail">
     </fragment>
-
 </LinearLayout>

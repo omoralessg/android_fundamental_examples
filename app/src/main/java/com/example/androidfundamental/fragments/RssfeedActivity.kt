@@ -1,12 +1,10 @@
 package com.example.androidfundamental.fragments
-
-import android.app.Activity
 import android.os.Bundle
+import androidx.fragment.app.FragmentActivity
 import com.example.androidfundamental.R
 
-
-class RssfeedActivity : Activity(),
-    MyListFragment.OnItemSelectedListener {
+class RssfeedActivity : FragmentActivity(),
+    ListFragment.OnItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,8 +12,7 @@ class RssfeedActivity : Activity(),
     }
 
     override fun onRssItemSelected(text: String?) {
-        val fragment = fragmentManager
-            .findFragmentById(R.id.detailFragment) as DetailFragment
-        fragment.setText(text)
+        val callingFragment = getSupportFragmentManager().findFragmentById(R.id.detailFragment) as DetailFragment
+        callingFragment.setText(text)
     }
 }
