@@ -13,9 +13,7 @@ import com.example.androidfundamental.R
  * A simple [Fragment] subclass.
  */
 class ListFragment : Fragment() {
-
     private lateinit var listener: OnItemSelectedListener
-    //private var listener: OnItemSelectedListener? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,10 +23,9 @@ class ListFragment : Fragment() {
             container, false
         )
         val button: Button = view.findViewById(R.id.updateButton) as Button
-        button.setOnClickListener(View.OnClickListener {
+        button.setOnClickListener{
             updateDetail("testing")
-
-        })
+        }
         return view
     }
 
@@ -41,8 +38,7 @@ class ListFragment : Fragment() {
             context
         } else {
             throw ClassCastException(
-                context.toString()
-                    .toString() + " must implement MyListFragment.OnItemSelectedListener"
+                context.toString() + {" must implement MyListFragment.OnItemSelectedListener"}
             )
         }
         super.onAttach(context)
