@@ -18,8 +18,21 @@ class DetailFragment : Fragment() {
         )
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        val bundle = arguments
+        if (bundle != null) {
+            val text = bundle.getString(EXTRA_TEXT)
+            setText(text)
+        }
+    }
+
     fun setText(text: String?) {
-        val view = getView()!!.findViewById(R.id.detailsText) as TextView
+        val view = view!!.findViewById<View>(R.id.detailsText) as TextView
         view.text = text
+    }
+
+    companion object {
+        const val EXTRA_TEXT = "text"
     }
 }
