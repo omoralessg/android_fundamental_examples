@@ -8,11 +8,23 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.androidfundamental.R
 
 class RssfeedActivity : FragmentActivity(), ListFragment.OnItemSelectedListener {
+    var stateFragment: SelectionStateFragment? = null
     private val manager: FragmentManager = supportFragmentManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rssfeed)
-        if (resources.getBoolean(R.bool.twoPaneMode)) { // all good, we use the fragments defined in the layout
+        stateFragment = manager
+            .findFragmentByTag("headless") as? SelectionStateFragment
+        if (stateFragment == null) {
+            stateFragment = SelectionStateFragment()
+            manager.beginTransaction()
+                .add(stateFragment!!, "headless").commit()
+        }
+        if (resources.getBoolean(R.bool.twoPaneMode)) { // restore state
+            if (stateFragment!!.lastSelection.length > 0) {
+                onRssItemSelected(stateFragment!!.lastSelection)
+            }
+            // otherwise all is good, we use the fragments defined in the layout
             return
         }
         // if savedInstanceState is null we do some cleanup
@@ -31,8 +43,10 @@ class RssfeedActivity : FragmentActivity(), ListFragment.OnItemSelectedListener 
     }
 
     override fun onRssItemSelected(text: String?) {
+        stateFragment!!.lastSelection = text!!
         if (resources.getBoolean(R.bool.twoPaneMode)) {
-            val fragment = manager.findFragmentById(R.id.detailFragment) as DetailFragment
+            val fragment = manager
+                .findFragmentById(R.id.detailFragment) as DetailFragment
             fragment.setText(text)
         } else { // replace the fragment
             // Create fragment and give it an argument for the selected article
@@ -40,7 +54,8 @@ class RssfeedActivity : FragmentActivity(), ListFragment.OnItemSelectedListener 
             val args = Bundle()
             args.putString(DetailFragment.EXTRA_TEXT, text)
             newFragment.arguments = args
-            val transaction: FragmentTransaction = manager.beginTransaction()
+            val transaction: FragmentTransaction =
+                manager.beginTransaction()
             // Replace whatever is in the fragment_container view with this fragment,
             // and add the transaction to the back stack so the user can navigate back
             transaction.replace(R.id.fragment_container, newFragment)
