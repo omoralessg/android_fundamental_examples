@@ -18,7 +18,7 @@
         <activity android:name=".listviewandactivityexample.SelectionSingleView" />
         <activity android:name=".listviewandactivityexample.ListExampleActivity" />
         <activity android:name=".viewmodelexample.TaskActivity" />
-        <activity android:name=".spinner_instance_state.SpinnerActivity" />
+        <activity android:name=".spinner_instance_state.SpinnerActivity"></activity>
         <activity android:name=".UserOverViewActivity" />
         <activity android:name=".RecyclerViewActivity" />
         <activity android:name=".TracerActivity" />
