@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".fragments.RssfeedActivity" />
+        <activity android:name=".fragments.MainActivity" />
         <activity android:name=".databindingexample.view.DataBindingExampleActivity" />
         <activity android:name=".listviewandactivityexample.ExpandableListActivity" />
         <activity android:name=".listviewandactivityexample.UndoBarActivity" />
