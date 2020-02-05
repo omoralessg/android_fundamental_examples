@@ -56,6 +56,8 @@ class RssfeedActivity : FragmentActivity(), ListFragment.OnItemSelectedListener 
             newFragment.arguments = args
             val transaction: FragmentTransaction =
                 manager.beginTransaction()
+            //animations
+            transaction.setCustomAnimations(R.animator.slide_up,R.animator.slide_down)
             // Replace whatever is in the fragment_container view with this fragment,
             // and add the transaction to the back stack so the user can navigate back
             transaction.replace(R.id.fragment_container, newFragment)
