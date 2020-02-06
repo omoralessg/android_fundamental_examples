@@ -15,7 +15,7 @@ import com.example.androidfundamental.R
  */
 class MyDialogFragment  // Empty constructor required for DialogFragment
     : DialogFragment(), OnEditorActionListener {
-    private var mEditText: EditText? = null
+    private lateinit var mEditText: EditText
 
     interface UserNameListener {
         fun onFinishUserDialog(user: String?)
@@ -28,12 +28,12 @@ class MyDialogFragment  // Empty constructor required for DialogFragment
         val view: View = inflater.inflate(R.layout.fragment_username, container)
         mEditText = view.findViewById<View>(R.id.username) as EditText
         // set this instance as callback for editor action
-        mEditText!!.setOnEditorActionListener(this)
-        mEditText!!.requestFocus()
+        mEditText.setOnEditorActionListener(this)
+        mEditText.requestFocus()
         dialog?.window?.setSoftInputMode(
             WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE
         )
-        dialog!!.setTitle("Please enter username")
+        dialog?.setTitle("Please enter username")
         return view
     }
 
@@ -44,7 +44,7 @@ class MyDialogFragment  // Empty constructor required for DialogFragment
     ): Boolean { // Return input text to activity
         val activity =
             activity as UserNameListener
-        activity.onFinishUserDialog(mEditText!!.text.toString())
+        activity.onFinishUserDialog(mEditText.text.toString())
         this.dismiss()
         return true
     }

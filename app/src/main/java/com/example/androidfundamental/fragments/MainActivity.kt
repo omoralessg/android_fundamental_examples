@@ -3,7 +3,6 @@ package com.example.androidfundamental.fragments
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import com.example.androidfundamental.R
@@ -16,8 +15,6 @@ class MainActivity : FragmentActivity(), UserNameListener , View.OnClickListener
         setContentView(R.layout.activity_main)
         showAlertDialogFragment.setOnClickListener(this)
         showCustomFragment.setOnClickListener(this)
-
-
     }
 
     override fun onFinishUserDialog(user: String?) {
@@ -27,10 +24,11 @@ class MainActivity : FragmentActivity(), UserNameListener , View.OnClickListener
     override fun onClick(view: View) { // close existing dialog fragments
         val manager: FragmentManager = supportFragmentManager
         val frag = manager.findFragmentByTag("fragment_edit_name")
+        //val state = checkNotNull(frag)
         if (frag != null) {
             manager.beginTransaction().remove(frag).commit()
         }
-        when (view.getId()) {
+        when (view.id) {
             R.id.showCustomFragment -> {
                 val editNameDialog = MyDialogFragment()
                 editNameDialog.show(manager, "fragment_edit_name")
