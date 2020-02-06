@@ -21,12 +21,8 @@ class DetailFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val bundle = arguments
-        val state = checkNotNull(bundle)
-        if (!state.isEmpty) {
-            val text = bundle.getString(EXTRA_TEXT)
-            setText(text)
-        }
+        val text = arguments?.getString(EXTRA_TEXT) ?: ""
+        setText(text)
     }
 
     fun setText(text: String?) {

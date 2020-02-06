@@ -23,11 +23,10 @@ class MainActivity : FragmentActivity(), UserNameListener , View.OnClickListener
 
     override fun onClick(view: View) { // close existing dialog fragments
         val manager: FragmentManager = supportFragmentManager
-        val frag = manager.findFragmentByTag("fragment_edit_name")
-        //val state = checkNotNull(frag)
-        if (frag != null) {
-            manager.beginTransaction().remove(frag).commit()
+        manager.findFragmentByTag("fragment_edit_name")?.let {
+                frag -> manager.beginTransaction().remove(frag).commit()
         }
+        
         when (view.id) {
             R.id.showCustomFragment -> {
                 val editNameDialog = MyDialogFragment()
