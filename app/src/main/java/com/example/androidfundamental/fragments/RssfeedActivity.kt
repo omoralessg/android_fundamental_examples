@@ -1,18 +1,27 @@
 package com.example.androidfundamental.fragments
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
+import android.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.example.androidfundamental.R
+import kotlinx.android.synthetic.main.activity_rssfeed.*
+
 
 class RssfeedActivity : FragmentActivity(), ListFragment.OnItemSelectedListener {
     var stateFragment: SelectionStateFragment? = null
     private val manager: FragmentManager = supportFragmentManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rssfeed)
+        setActionBar(toolbar)
         stateFragment = manager
             .findFragmentByTag("headless") as? SelectionStateFragment
         if (stateFragment == null) {
@@ -40,6 +49,35 @@ class RssfeedActivity : FragmentActivity(), ListFragment.OnItemSelectedListener 
         val listFragment = ListFragment()
         manager.beginTransaction()
             .replace(R.id.fragment_container, listFragment).commit()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val tb = findViewById<Toolbar>(R.id.toolbar)
+        tb.inflateMenu(R.menu.mainmenu)
+        tb.setOnMenuItemClickListener { item -> onOptionsItemSelected(item) }
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_refresh -> {
+                Toast.makeText(this, "Action Refresh selected", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            R.id.action_settings -> {
+                Toast.makeText(this, "Action Settings selected", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            R.id.action_network -> {
+                val wirelessIntent = Intent("android.settings.WIRELESS_SETTINGS")
+                startActivity(wirelessIntent)
+                Toast.makeText(this, "Action Network selected", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            else -> {
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onRssItemSelected(text: String?) {

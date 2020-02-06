@@ -24,7 +24,7 @@ class ListFragment : Fragment() {
             container, false
         )
         val button: Button = view.findViewById(R.id.updateButton) as Button
-        button.setOnClickListener{
+        button.setOnClickListener {
             updateDetail("testing")
         }
         return view
@@ -39,7 +39,7 @@ class ListFragment : Fragment() {
             context
         } else {
             throw ClassCastException(
-                context.toString() + {" must implement MyListFragment.OnItemSelectedListener"}
+                context.toString() + { " must implement MyListFragment.OnItemSelectedListener" }
             )
         }
         super.onAttach(context)
