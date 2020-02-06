@@ -1,23 +1,42 @@
 package com.example.androidfundamental.fragments
 
+import android.app.ActionBar
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import com.example.androidfundamental.R
 import com.example.androidfundamental.fragments.MyDialogFragment.UserNameListener
 import kotlinx.android.synthetic.main.activity_main.*
 
+
 class MainActivity : FragmentActivity(), UserNameListener , View.OnClickListener{
+    lateinit var  menuItem: MenuItem
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         showAlertDialogFragment.setOnClickListener(this)
         showCustomFragment.setOnClickListener(this)
 
+        val actionBar: ActionBar? = actionBar
+        actionBar?.setDisplayOptions(
+            ActionBar.DISPLAY_SHOW_HOME
+                    or ActionBar.DISPLAY_SHOW_TITLE or ActionBar.DISPLAY_SHOW_CUSTOM
+        )
 
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onFinishUserDialog(user: String?) {
