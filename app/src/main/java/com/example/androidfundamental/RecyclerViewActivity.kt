@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import kotlinx.android.synthetic.main.activity_recycler_view.*
 
 class RecyclerViewActivity : AppCompatActivity() {
@@ -28,6 +29,13 @@ class RecyclerViewActivity : AppCompatActivity() {
         val itemTouchHelper = ItemTouchHelper(swipH)
         itemTouchHelper.attachToRecyclerView(recyclerView)
         setupRecyclerView()
+        swipe_refresh.setOnRefreshListener { SwipeRefreshLayout.OnRefreshListener {
+            updateRV()
+        } }
+    }
+
+    private fun updateRV() {
+        swipe_refresh.isRefreshing = false
     }
 
     private fun setupRecyclerView() {
