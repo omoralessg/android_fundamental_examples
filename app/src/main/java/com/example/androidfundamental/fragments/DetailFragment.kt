@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.androidfundamental.R
+import kotlinx.android.synthetic.main.fragment_rssitem_detail.*
 
 class DetailFragment : Fragment() {
     override fun onCreateView(
@@ -18,8 +19,17 @@ class DetailFragment : Fragment() {
         )
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        val text = arguments?.getString(EXTRA_TEXT) ?: ""
+        setText(text)
+    }
+
     fun setText(text: String?) {
-        val view = getView()!!.findViewById(R.id.detailsText) as TextView
-        view.text = text
+        detailsText.text = text
+    }
+
+    companion object {
+        const val EXTRA_TEXT = "text"
     }
 }

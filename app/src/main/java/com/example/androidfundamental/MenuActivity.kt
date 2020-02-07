@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.androidfundamental.databindingexample.view.DataBindingExampleActivity
+import com.example.androidfundamental.fragments.MainActivity
 import com.example.androidfundamental.fragments.RssfeedActivity
 import com.example.androidfundamental.spinner_instance_state.SpinnerActivity
 import com.example.androidfundamental.viewmodelexample.TaskActivity
@@ -52,6 +53,9 @@ class MenuActivity : AppCompatActivity() {
         }
         btn_view_model.setOnClickListener {
             startActivity(Intent(this, TaskActivity::class.java))
+        }
+        btn_df.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
         }
     }
 }
