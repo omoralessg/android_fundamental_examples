@@ -9,6 +9,7 @@ import com.example.androidfundamental.fragments.RssfeedActivity
 import com.example.androidfundamental.spinner_instance_state.SpinnerActivity
 import com.example.androidfundamental.viewmodelexample.TaskActivity
 import com.example.androidfundamental.listviewandactivityexample.*
+import com.example.androidfundamental.retrofitexample.ui.RetrofitMainActivity
 import kotlinx.android.synthetic.main.activity_menu.*
 
 class MenuActivity : AppCompatActivity() {
@@ -56,6 +57,9 @@ class MenuActivity : AppCompatActivity() {
         }
         btn_df.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+        }
+        btn_retrofit.setOnClickListener{
+            startActivity(Intent(this, RetrofitMainActivity::class.java))
         }
     }
 }
