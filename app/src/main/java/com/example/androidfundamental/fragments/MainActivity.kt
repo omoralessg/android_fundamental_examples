@@ -1,5 +1,6 @@
 package com.example.androidfundamental.fragments
 
+import android.app.ActionBar
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -15,6 +16,12 @@ class MainActivity : FragmentActivity(), UserNameListener , View.OnClickListener
         setContentView(R.layout.activity_main)
         showAlertDialogFragment.setOnClickListener(this)
         showCustomFragment.setOnClickListener(this)
+
+        val actionBar: ActionBar? = actionBar
+        actionBar?.setDisplayOptions(
+            ActionBar.DISPLAY_SHOW_HOME
+                    or ActionBar.DISPLAY_SHOW_TITLE or ActionBar.DISPLAY_SHOW_CUSTOM
+        )
     }
 
     override fun onFinishUserDialog(user: String?) {
@@ -26,7 +33,7 @@ class MainActivity : FragmentActivity(), UserNameListener , View.OnClickListener
         manager.findFragmentByTag("fragment_edit_name")?.let {
                 frag -> manager.beginTransaction().remove(frag).commit()
         }
-        
+
         when (view.id) {
             R.id.showCustomFragment -> {
                 val editNameDialog = MyDialogFragment()

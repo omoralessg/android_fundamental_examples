@@ -1,24 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:baselineAligned="false"
-    android:orientation="horizontal" >
-    <fragment
-        android:id="@+id/listFragment"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="match_parent"
-        class="com.example.androidfundamental.fragments.ListFragment"
-        tools:layout="@layout/fragment_rsslist_overview">
-    </fragment>
-    <fragment
-        android:id="@+id/detailFragment"
-        android:layout_width="0dp"
-        android:layout_weight="2"
-        android:layout_height="match_parent"
-        class="com.example.androidfundamental.fragments.DetailFragment"
-        tools:layout="@layout/fragment_rssitem_detail">
-    </fragment>
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.RssfeedActivity"
+    android:orientation="vertical">
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <fragment
+            android:id="@+id/listFragment"
+            class="com.example.androidfundamental.fragments.ListFragment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            tools:layout="@layout/fragment_rsslist_overview"/>
+
+        <fragment
+            android:id="@+id/detailFragment"
+            class="com.example.androidfundamental.fragments.DetailFragment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            tools:layout="@layout/fragment_rssitem_detail" />
+
+    </LinearLayout>
 </LinearLayout>
