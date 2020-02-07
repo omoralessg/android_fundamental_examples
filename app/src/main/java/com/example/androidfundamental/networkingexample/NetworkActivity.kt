@@ -3,33 +3,26 @@ package com.example.androidfundamental.networkingexample
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
-import android.net.NetworkInfo
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.androidfundamental.R
+import kotlinx.android.synthetic.main.activity_network.*
+
 
 class NetworkActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_network)
+        if (isInternetAvailable(this)) {
+            txt_internet.text = "internet avaiable"
 
-
-
-
-
-
-
-
-
+        } else {
+            txt_internet.text = "internet unavaiable"
+        }
     }
 
-    private fun isNetworkConnected(): Boolean {
-        val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager //1
-        val networkInfo = connectivityManager.activeNetworkInfo //2
-        return networkInfo != null && networkInfo.isConnected //3
-    }
 
     private fun isInternetAvailable(context: Context): Boolean {
         var result = false
@@ -45,20 +38,8 @@ class NetworkActivity : AppCompatActivity() {
                 actNw.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> true
                 else -> false
             }
-        } else {
-            connectivityManager.run {
-                connectivityManager.activeNetworkInfo?.run {
-                    result = when (type) {
-                        ConnectivityManager.TYPE_WIFI -> true
-                        ConnectivityManager.TYPE_MOBILE -> true
-                        ConnectivityManager.TYPE_ETHERNET -> true
-                        else -> false
-                    }
-
-                }
-            }
         }
-
         return result
     }
+
 }

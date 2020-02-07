@@ -7,7 +7,7 @@
     tools:context=".networkingexample.NetworkActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txt_internet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

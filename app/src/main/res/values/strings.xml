@@ -13,6 +13,7 @@
     <string name="hello_world">hello</string>
     <string name="expandable_list">Expandable list</string>
     <string name="spinner">Spinner</string>
+    <string name="network">Network</string>
     <string-array name="operating_systems">
         <item>Ubuntu</item>
         <item>Android</item>

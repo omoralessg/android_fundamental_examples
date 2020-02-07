@@ -8,6 +8,7 @@ import com.example.androidfundamental.fragments.RssfeedActivity
 import com.example.androidfundamental.spinner_instance_state.SpinnerActivity
 import com.example.androidfundamental.viewmodelexample.TaskActivity
 import com.example.androidfundamental.listviewandactivityexample.*
+import com.example.androidfundamental.networkingexample.NetworkActivity
 import kotlinx.android.synthetic.main.activity_menu.*
 
 class MenuActivity : AppCompatActivity() {
@@ -52,6 +53,9 @@ class MenuActivity : AppCompatActivity() {
         }
         btn_view_model.setOnClickListener {
             startActivity(Intent(this, TaskActivity::class.java))
+        }
+        btn_network.setOnClickListener {
+            startActivity(Intent(this, NetworkActivity::class.java))
         }
     }
 }
