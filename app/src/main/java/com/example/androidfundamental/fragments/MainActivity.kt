@@ -10,7 +10,6 @@ import com.example.androidfundamental.R
 import com.example.androidfundamental.fragments.MyDialogFragment.UserNameListener
 import kotlinx.android.synthetic.main.activity_main.*
 
-
 class MainActivity : FragmentActivity(), UserNameListener , View.OnClickListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,10 +30,10 @@ class MainActivity : FragmentActivity(), UserNameListener , View.OnClickListener
 
     override fun onClick(view: View) { // close existing dialog fragments
         val manager: FragmentManager = supportFragmentManager
-        val frag = manager.findFragmentByTag("fragment_edit_name")
-        if (frag != null) {
-            manager.beginTransaction().remove(frag).commit()
+        manager.findFragmentByTag("fragment_edit_name")?.let {
+                frag -> manager.beginTransaction().remove(frag).commit()
         }
+
         when (view.id) {
             R.id.showCustomFragment -> {
                 val editNameDialog = MyDialogFragment()

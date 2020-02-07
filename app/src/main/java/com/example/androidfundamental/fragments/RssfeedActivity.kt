@@ -1,6 +1,7 @@
 package com.example.androidfundamental.fragments
 
 import android.content.Intent
+
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -13,11 +14,9 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.androidfundamental.R
 import kotlinx.android.synthetic.main.activity_rssfeed.*
 
-
 class RssfeedActivity : FragmentActivity(), ListFragment.OnItemSelectedListener {
     var stateFragment: SelectionStateFragment? = null
     private val manager: FragmentManager = supportFragmentManager
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rssfeed)
