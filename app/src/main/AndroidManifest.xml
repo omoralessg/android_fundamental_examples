@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.androidfundamental">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,15 +10,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".fragments.RssfeedActivity"></activity>
-        <activity android:name=".databindingexample.view.DataBindingExampleActivity"></activity>
-        <activity android:name=".listviewandactivityexample.ExpandableListActivity"></activity>
+        <activity android:name=".networkingexample.NetworkActivity"></activity>
+        <activity android:name=".fragments.RssfeedActivity" />
+        <activity android:name=".databindingexample.view.DataBindingExampleActivity" />
+        <activity android:name=".listviewandactivityexample.ExpandableListActivity" />
         <activity android:name=".listviewandactivityexample.UndoBarActivity" />
         <activity android:name=".listviewandactivityexample.TwoListItemsActivity" />
         <activity android:name=".listviewandactivityexample.SelectionSingleView" />
         <activity android:name=".listviewandactivityexample.ListExampleActivity" />
         <activity android:name=".viewmodelexample.TaskActivity" />
-        <activity android:name=".spinner_instance_state.SpinnerActivity"></activity>
+        <activity android:name=".spinner_instance_state.SpinnerActivity" />
         <activity android:name=".UserOverViewActivity" />
         <activity android:name=".RecyclerViewActivity" />
         <activity android:name=".TracerActivity" />
