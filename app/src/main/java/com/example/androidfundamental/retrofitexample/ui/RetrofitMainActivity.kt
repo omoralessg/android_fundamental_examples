@@ -2,7 +2,6 @@ package com.example.androidfundamental.retrofitexample.ui
 
 import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -41,7 +40,7 @@ class RetrofitMainActivity : Activity(), View.OnClickListener {
                 id: Long
             ) {
                 val question = parent.adapter.getItem(position) as Question
-                stackoverflowAPI!!.getAnswersForQuestion(question.questionId)!!.enqueue(
+                stackoverflowAPI.getAnswersForQuestion(question.questionId)!!.enqueue(
                     answersCallback
                 )
             }
@@ -53,13 +52,13 @@ class RetrofitMainActivity : Activity(), View.OnClickListener {
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this@RetrofitMainActivity)
         createStackoverflowAPI()
-        stackoverflowAPI!!.questions!!.enqueue(questionsCallback)
+        stackoverflowAPI.questions!!.enqueue(questionsCallback)
     }
 
     override fun onResume() {
         super.onResume()
         if (token != null) {
-            authenticateButton!!.isEnabled = false
+            authenticateButton.isEnabled = false
         }
     }
 
@@ -110,7 +109,7 @@ class RetrofitMainActivity : Activity(), View.OnClickListener {
                         android.R.layout.simple_spinner_dropdown_item,
                         questions?.items!!
                     )
-                    questionsSpinner!!.adapter = arrayAdapter
+                    questionsSpinner.adapter = arrayAdapter
                 } else {
                     Log.d(
                         "QuestionsCallback",
@@ -129,7 +128,7 @@ class RetrofitMainActivity : Activity(), View.OnClickListener {
                 call: Call<ListWrapper<Answer?>?>?,
                 response: Response<ListWrapper<Answer?>?>
             ) {
-                if (response.isSuccessful()) {
+                if (response.isSuccessful) {
                     val data: MutableList<Answer> = ArrayList()
                     data.addAll(response.body()?.items as MutableList<Answer>)
                     recyclerView.adapter = RecyclerViewAdapter(data)
