@@ -24,16 +24,16 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitMainActivity : Activity(), View.OnClickListener {
-    private var stackoverflowAPI: StackOverflowAPI? = null
+    private lateinit var stackoverflowAPI: StackOverflowAPI
     private var token: String? = null
-    private var authenticateButton: Button? = null
-    private var questionsSpinner: Spinner? = null
-    private var recyclerView: RecyclerView? = null
+    private lateinit var authenticateButton: Button
+    private lateinit var questionsSpinner: Spinner
+    private lateinit var recyclerView: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.retrofit_activity_main)
         questionsSpinner = findViewById<View>(R.id.questions_spinner) as Spinner
-        questionsSpinner!!.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        questionsSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>,
                 view: View,
@@ -50,8 +50,8 @@ class RetrofitMainActivity : Activity(), View.OnClickListener {
         }
         authenticateButton = findViewById<View>(R.id.authenticate_button) as Button
         recyclerView = findViewById<View>(R.id.list) as RecyclerView
-        recyclerView!!.setHasFixedSize(true)
-        recyclerView!!.layoutManager = LinearLayoutManager(this@RetrofitMainActivity)
+        recyclerView.setHasFixedSize(true)
+        recyclerView.layoutManager = LinearLayoutManager(this@RetrofitMainActivity)
         createStackoverflowAPI()
         stackoverflowAPI!!.questions!!.enqueue(questionsCallback)
     }
@@ -132,7 +132,7 @@ class RetrofitMainActivity : Activity(), View.OnClickListener {
                 if (response.isSuccessful()) {
                     val data: MutableList<Answer> = ArrayList()
                     data.addAll(response.body()?.items as MutableList<Answer>)
-                    recyclerView!!.adapter = RecyclerViewAdapter(data)
+                    recyclerView.adapter = RecyclerViewAdapter(data)
                 } else {
                     Log.d(
                         "QuestionsCallback",
