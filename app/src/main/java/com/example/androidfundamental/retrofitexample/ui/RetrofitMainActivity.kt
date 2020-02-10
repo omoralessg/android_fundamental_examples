@@ -40,7 +40,7 @@ class RetrofitMainActivity : Activity(), View.OnClickListener {
                 id: Long
             ) {
                 val question = parent.adapter.getItem(position) as Question
-                stackoverflowAPI.getAnswersForQuestion(question.questionId)!!.enqueue(
+                stackoverflowAPI.getAnswersForQuestion(question.questionId)?.enqueue(
                     answersCallback
                 )
             }
@@ -52,7 +52,7 @@ class RetrofitMainActivity : Activity(), View.OnClickListener {
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this@RetrofitMainActivity)
         createStackoverflowAPI()
-        stackoverflowAPI.questions!!.enqueue(questionsCallback)
+        stackoverflowAPI.questions?.enqueue(questionsCallback)
     }
 
     override fun onResume() {
@@ -102,13 +102,15 @@ class RetrofitMainActivity : Activity(), View.OnClickListener {
                 call: Call<ListWrapper<Question?>?>?,
                 response: Response<ListWrapper<Question?>?>
             ) {
-                if (response.isSuccessful()) {
+                if (response.isSuccessful) {
                     val questions: ListWrapper<Question?>? = response.body()
-                    val arrayAdapter = ArrayAdapter(
-                        this@RetrofitMainActivity,
-                        android.R.layout.simple_spinner_dropdown_item,
-                        questions?.items!!
-                    )
+                    val arrayAdapter = questions?.items?.let {
+                        ArrayAdapter(
+                            this@RetrofitMainActivity,
+                            android.R.layout.simple_spinner_dropdown_item,
+                            it
+                        )
+                    }
                     questionsSpinner.adapter = arrayAdapter
                 } else {
                     Log.d(
@@ -130,6 +132,7 @@ class RetrofitMainActivity : Activity(), View.OnClickListener {
             ) {
                 if (response.isSuccessful) {
                     val data: MutableList<Answer> = ArrayList()
+                    @Suppress("UNCHECKED_CAST")
                     data.addAll(response.body()?.items as MutableList<Answer>)
                     recyclerView.adapter = RecyclerViewAdapter(data)
                 } else {
@@ -146,7 +149,7 @@ class RetrofitMainActivity : Activity(), View.OnClickListener {
         }
     var upvoteCallback: Callback<ResponseBody?> = object : Callback<ResponseBody?> {
         override fun onResponse(call: Call<ResponseBody?>?, response: Response<ResponseBody?>) {
-            if (response.isSuccessful()) {
+            if (response.isSuccessful) {
                 Toast.makeText(this@RetrofitMainActivity, "Upvote successful", Toast.LENGTH_LONG).show()
             } else {
                 Log.d(
