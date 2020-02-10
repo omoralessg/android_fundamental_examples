@@ -10,6 +10,7 @@ import com.example.androidfundamental.spinner_instance_state.SpinnerActivity
 import com.example.androidfundamental.viewmodelexample.TaskActivity
 import com.example.androidfundamental.listviewandactivityexample.*
 import com.example.androidfundamental.retrofitexample.ui.RetrofitMainActivity
+import com.example.androidfundamental.network.NetworkActivity
 import kotlinx.android.synthetic.main.activity_menu.*
 
 class MenuActivity : AppCompatActivity() {
@@ -60,6 +61,9 @@ class MenuActivity : AppCompatActivity() {
         }
         btn_retrofit.setOnClickListener{
             startActivity(Intent(this, RetrofitMainActivity::class.java))
+        }
+        btn_network.setOnClickListener {
+            startActivity(Intent(this, NetworkActivity::class.java))
         }
     }
 }

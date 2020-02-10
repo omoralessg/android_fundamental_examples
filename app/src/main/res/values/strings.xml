@@ -22,4 +22,5 @@
     <string name="alert_dialog">Alert Dialog</string>
     <string name="dialog_fragments">Dialog Fragments</string>
     <string name="retrofit">Retrofit</string>
+    <string name="check_internet">Verify Internet</string>
 </resources>
