@@ -25,4 +25,7 @@
     <string name="alert_dialog">Alert Dialog</string>
     <string name="dialog_fragments">Dialog Fragments</string>
     <string name="check_internet">Verify Internet</string>
+    <string name="android_fundamental">Android Fundamental</string>
+    <string name="fragments_toolbar">Fragments and Toolbar</string>
+    <string name="android_network">Android Network</string>
 </resources>

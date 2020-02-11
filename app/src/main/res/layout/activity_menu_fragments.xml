@@ -4,36 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuActivity">
+    tools:context=".fragments.MenuFragmentsActivity">
 
     <Button
-        android:id="@+id/btn_fundamental"
+        android:id="@+id/btn_fragments"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/android_fundamental"
+        android:layout_marginTop="16dp"
+        android:text="@string/fragments"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_fragments_toolbar"
+        android:id="@+id/btn_df"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/fragments_toolbar"
+        android:layout_marginTop="16dp"
+        android:text="@string/dialog_fragments"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_fundamental" />
-
-    <Button
-        android:id="@+id/btn_android_network"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/android_network"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_fragments_toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_fragments" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,10 +15,10 @@ class NetworkActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_networking)
         if (isInternetAvailable(this)) {
-            txt_internet.text = "internet avaiable"
+            txt_internet.text = "internet available"
 
         } else {
-            txt_internet.text = "internet unavaiable"
+            txt_internet.text = "internet unavailable"
         }
     }
 
