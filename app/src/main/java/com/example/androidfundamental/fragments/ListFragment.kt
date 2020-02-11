@@ -39,7 +39,7 @@ class ListFragment : Fragment() {
         } else {
             throw ClassCastException(
                 context.toString() + { " must implement MyListFragment.OnItemSelectedListener" }
-            )
+            ) as Throwable
         }
         super.onAttach(context)
     }
