@@ -29,4 +29,5 @@
     <string name="trophy">Trophy</string>
     <string name="skills">Skills</string>
     <string name="room">Room</string>
+    <string name="content_provider">Content Provider</string>
 </resources>

@@ -3,6 +3,7 @@ package com.example.androidfundamental
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.androidfundamental.contentprovider.ContactsActivity
 import com.example.androidfundamental.fragments.MenuFragmentsActivity
 import com.example.androidfundamental.fundamental.FundamentalActivity
 import com.example.androidfundamental.network.NetworkMenuActivity
@@ -28,5 +29,8 @@ class MenuActivity : AppCompatActivity() {
         btn_room.setOnClickListener {
             startActivity(Intent(this, MainRoomActivity::class.java))
         }
+        /*btn_content_provider.setOnClickListener {
+            startActivity(Intent(this, ContactsActivity::class.java))
+        }*/
 }
 }
