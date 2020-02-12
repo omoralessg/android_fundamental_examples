@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".roomexample.MainRoomActivity"></activity>
         <activity android:name=".network.NetworkMenuActivity"></activity>
         <activity android:name=".fragments.MenuFragmentsActivity" />
         <activity android:name=".fundamental.FundamentalActivity" />

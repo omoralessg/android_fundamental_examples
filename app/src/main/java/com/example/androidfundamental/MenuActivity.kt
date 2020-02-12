@@ -7,6 +7,7 @@ import com.example.androidfundamental.fragments.MenuFragmentsActivity
 import com.example.androidfundamental.fundamental.FundamentalActivity
 import com.example.androidfundamental.network.NetworkMenuActivity
 import com.example.androidfundamental.retrofitexample.ui.RetrofitMainActivity
+import com.example.androidfundamental.roomexample.MainRoomActivity
 import kotlinx.android.synthetic.main.activity_menu.*
 
 class MenuActivity : AppCompatActivity() {
@@ -23,6 +24,9 @@ class MenuActivity : AppCompatActivity() {
         }
         btn_fragments_toolbar.setOnClickListener {
             startActivity(Intent(this, MenuFragmentsActivity::class.java))
-    }
+        }
+        btn_room.setOnClickListener {
+            startActivity(Intent(this, MainRoomActivity::class.java))
+        }
 }
 }
