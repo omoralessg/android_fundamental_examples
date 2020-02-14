@@ -29,8 +29,8 @@ class MenuActivity : AppCompatActivity() {
         btn_room.setOnClickListener {
             startActivity(Intent(this, MainRoomActivity::class.java))
         }
-        /*btn_content_provider.setOnClickListener {
+        btn_content_provider.setOnClickListener {
             startActivity(Intent(this, ContactsActivity::class.java))
-        }*/
+        }
 }
 }
