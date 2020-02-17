@@ -30,4 +30,6 @@
     <string name="skills">Skills</string>
     <string name="room">Room</string>
     <string name="content_provider">Content Provider</string>
+    <string name="rx_java">RxJava</string>
+    <string name="scheduler">Scheduler</string>
 </resources>
