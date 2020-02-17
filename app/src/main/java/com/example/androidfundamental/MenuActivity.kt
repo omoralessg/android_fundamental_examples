@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.androidfundamental.fragments.MenuFragmentsActivity
 import com.example.androidfundamental.fundamental.FundamentalActivity
+import com.example.androidfundamental.handler.ProgressTestActivity
 import com.example.androidfundamental.network.NetworkMenuActivity
 import com.example.androidfundamental.retrofitexample.ui.RetrofitMainActivity
 import kotlinx.android.synthetic.main.activity_menu.*
@@ -24,5 +25,8 @@ class MenuActivity : AppCompatActivity() {
         btn_fragments_toolbar.setOnClickListener {
             startActivity(Intent(this, MenuFragmentsActivity::class.java))
     }
+        btn_handler.setOnClickListener {
+            startActivity(Intent(this, ProgressTestActivity::class.java))
+        }
 }
 }

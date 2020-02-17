@@ -26,4 +26,5 @@
     <string name="android_fundamental">Android Fundamental</string>
     <string name="fragments_toolbar">Fragments and Toolbar</string>
     <string name="android_network">Android Network</string>
+    <string name="handler">handler</string>
 </resources>
