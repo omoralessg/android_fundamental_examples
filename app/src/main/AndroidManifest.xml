@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".handler.ProgressTestActivity"></activity>
+        <activity android:name=".asynctask.ReadWebpageAsyncTask"></activity>
+        <activity android:name=".handler.ProgressTestActivity" />
         <activity android:name=".network.NetworkMenuActivity" />
         <activity android:name=".fragments.MenuFragmentsActivity" />
         <activity android:name=".fundamental.FundamentalActivity" />

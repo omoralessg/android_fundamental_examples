@@ -3,6 +3,7 @@ package com.example.androidfundamental
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.androidfundamental.asynctask.ReadWebpageAsyncTask
 import com.example.androidfundamental.fragments.MenuFragmentsActivity
 import com.example.androidfundamental.fundamental.FundamentalActivity
 import com.example.androidfundamental.handler.ProgressTestActivity
@@ -27,6 +28,9 @@ class MenuActivity : AppCompatActivity() {
     }
         btn_handler.setOnClickListener {
             startActivity(Intent(this, ProgressTestActivity::class.java))
+        }
+        btn_asynctask.setOnClickListener {
+            startActivity(Intent(this, ReadWebpageAsyncTask::class.java))
         }
 }
 }
