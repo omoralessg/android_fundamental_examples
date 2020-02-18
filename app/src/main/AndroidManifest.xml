@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".retrofitexample.github.GitHubActivity"></activity>
-        <activity android:name=".mvpsample.createtask.TasksActivity" />
+        <activity android:name=".mvpsample.createtask.view.TasksActivity" />
         <activity android:name=".contentprovider.ContactsActivity" />
         <activity android:name=".roomexample.MainRoomActivity" />
         <activity android:name=".network.NetworkMenuActivity" />
