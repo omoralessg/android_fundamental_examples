@@ -22,14 +22,14 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 class GitHubActivity : AppCompatActivity(), ICredentialsDialogListener {
-    var githubAPI: GithubAPI? = null
-    var username: String? = null
-    var password: String? = null
-    var repositoriesSpinner: Spinner? = null
-    var issuesSpinner: Spinner? = null
-    var commentEditText: EditText? = null
-    var sendButton: Button? = null
-    var loadReposButtons: Button? = null
+    lateinit var githubAPI: GithubAPI
+    lateinit var username: String
+    lateinit var password: String
+    lateinit var repositoriesSpinner: Spinner
+    lateinit var issuesSpinner: Spinner
+    lateinit var commentEditText: EditText
+    lateinit var sendButton: Button
+    lateinit var loadReposButtons: Button
     private val compositeDisposable: CompositeDisposable? = CompositeDisposable()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,13 +41,13 @@ class GitHubActivity : AppCompatActivity(), ICredentialsDialogListener {
             findViewById<View>(R.id.send_comment_button) as Button
         repositoriesSpinner =
             findViewById<View>(R.id.repositories_spinner) as Spinner
-        repositoriesSpinner!!.isEnabled = false
-        repositoriesSpinner!!.adapter = ArrayAdapter(
+        repositoriesSpinner.isEnabled = false
+        repositoriesSpinner.adapter = ArrayAdapter(
             this@GitHubActivity,
             android.R.layout.simple_spinner_dropdown_item,
             arrayOf("No repositories available")
         )
-        repositoriesSpinner!!.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        repositoriesSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>,
                 view: View,
@@ -56,7 +56,7 @@ class GitHubActivity : AppCompatActivity(), ICredentialsDialogListener {
             ) {
                 if (parent.selectedItem is GithubRepo) {
                     val githubRepo = parent.selectedItem as GithubRepo
-                    githubAPI!!.getIssues(githubRepo.owner, githubRepo.name)
+                    githubAPI.getIssues(githubRepo.owner, githubRepo.name)
                         ?.subscribeOn(Schedulers.io())
                         ?.observeOn(AndroidSchedulers.mainThread())
                         ?.subscribeWith(
@@ -73,8 +73,8 @@ class GitHubActivity : AppCompatActivity(), ICredentialsDialogListener {
         }
         issuesSpinner =
             findViewById<View>(R.id.issues_spinner) as Spinner
-        issuesSpinner!!.isEnabled = false
-        issuesSpinner!!.adapter = ArrayAdapter(
+        issuesSpinner.isEnabled = false
+        issuesSpinner.adapter = ArrayAdapter(
             this@GitHubActivity,
             android.R.layout.simple_spinner_dropdown_item,
             arrayOf("Please select repository")
@@ -166,16 +166,16 @@ class GitHubActivity : AppCompatActivity(), ICredentialsDialogListener {
                         android.R.layout.simple_spinner_dropdown_item,
                         value
                     )
-                    repositoriesSpinner!!.adapter = spinnerAdapter
-                    repositoriesSpinner!!.isEnabled = true
+                    repositoriesSpinner.adapter = spinnerAdapter
+                    repositoriesSpinner.isEnabled = true
                 } else {
                     val spinnerAdapter = ArrayAdapter(
                         this@GitHubActivity,
                         android.R.layout.simple_spinner_dropdown_item,
                         arrayOf("User has no repositories")
                     )
-                    repositoriesSpinner!!.adapter = spinnerAdapter
-                    repositoriesSpinner!!.isEnabled = false
+                    repositoriesSpinner.adapter = spinnerAdapter
+                    repositoriesSpinner.isEnabled = false
                 }
             }
 
@@ -195,20 +195,20 @@ class GitHubActivity : AppCompatActivity(), ICredentialsDialogListener {
                         android.R.layout.simple_spinner_dropdown_item,
                         value
                     )
-                    issuesSpinner!!.isEnabled = true
-                    commentEditText!!.isEnabled = true
-                    sendButton!!.isEnabled = true
-                    issuesSpinner!!.adapter = spinnerAdapter
+                    issuesSpinner.isEnabled = true
+                    commentEditText.isEnabled = true
+                    sendButton.isEnabled = true
+                    issuesSpinner.adapter = spinnerAdapter
                 } else {
                     val spinnerAdapter = ArrayAdapter(
                         this@GitHubActivity,
                         android.R.layout.simple_spinner_dropdown_item,
                         arrayOf("Repository has no issues")
                     )
-                    issuesSpinner!!.isEnabled = false
-                    commentEditText!!.isEnabled = false
-                    sendButton!!.isEnabled = false
-                    issuesSpinner!!.adapter = spinnerAdapter
+                    issuesSpinner.isEnabled = false
+                    commentEditText.isEnabled = false
+                    sendButton.isEnabled = false
+                    issuesSpinner.adapter = spinnerAdapter
                 }
             }
 
@@ -222,7 +222,7 @@ class GitHubActivity : AppCompatActivity(), ICredentialsDialogListener {
     private val commentObserver: DisposableSingleObserver<ResponseBody?>
         private get() = object : DisposableSingleObserver<ResponseBody?>() {
             override fun onSuccess(value: ResponseBody) {
-                commentEditText!!.setText("")
+                commentEditText.setText("")
                 Toast.makeText(this@GitHubActivity, "Comment created", Toast.LENGTH_LONG).show()
             }
 
@@ -234,11 +234,11 @@ class GitHubActivity : AppCompatActivity(), ICredentialsDialogListener {
         }
 
     override fun onDialogPositiveClick(
-        username: String?,
-        password: String?
+        username: String,
+        password: String
     ) {
         this.username = username
         this.password = password
-        loadReposButtons!!.isEnabled = true
+        loadReposButtons.isEnabled = true
     }
 }
