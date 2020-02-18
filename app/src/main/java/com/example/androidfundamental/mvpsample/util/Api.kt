@@ -1,13 +1,15 @@
-package com.example.androidfundamental.mvpsample.data
+package com.example.androidfundamental.mvpsample.util
 
 import com.example.androidfundamental.retrofitexample.github.GithubIssue
+import com.example.androidfundamental.retrofitexample.github.GithubRepo
 import com.squareup.okhttp.ResponseBody
+import io.reactivex.Observable
 import io.reactivex.Single
 import retrofit2.http.*
 
-interface GithubAPI {
+interface Api {
     @get:GET("user/repos?per_page=100")
-    val repos: Single<List<com.example.androidfundamental.retrofitexample.github.GithubRepo?>?>?
+    val repos: Single<List<GithubRepo?>?>?
 
     @GET("/repos/{owner}/{repo}/issues")
     fun getIssues(@Path("owner") owner: String?, @Path("repo") repository: String?): Single<List<GithubIssue?>?>?

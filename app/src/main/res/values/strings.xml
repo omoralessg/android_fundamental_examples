@@ -33,4 +33,11 @@
     <string name="rx_java">RxJava</string>
     <string name="scheduler">Scheduler</string>
     <string name="github">Github</string>
+    <string name="error">Error</string>
+    <string name="mvp">MVP</string>
+    <string name="show_repositories">Repositories</string>
+    <string name="name">Name</string>
+    <string name="owner">Owner</string>
+    <string name="url">url</string>
+    <string name="ok">Ok</string>
 </resources>

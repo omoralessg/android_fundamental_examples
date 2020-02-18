@@ -13,8 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".retrofitexample.github.GitHubActivity"></activity>
-        <activity android:name=".mvpsample.createtask.view.TasksActivity" />
+        <activity android:name=".mvpsample.respositorydetail.RepositoryDetailActivity"></activity>
+        <activity android:name=".retrofitexample.github.GitHubActivity" />
+        <activity android:name=".mvpsample.createtask.ui.TasksActivity" />
         <activity android:name=".contentprovider.ContactsActivity" />
         <activity android:name=".roomexample.MainRoomActivity" />
         <activity android:name=".network.NetworkMenuActivity" />

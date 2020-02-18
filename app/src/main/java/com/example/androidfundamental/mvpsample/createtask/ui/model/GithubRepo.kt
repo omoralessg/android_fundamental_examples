@@ -1,4 +1,4 @@
-package com.example.androidfundamental.mvpsample.createtask.model
+package com.example.androidfundamental.mvpsample.createtask.ui.model
 
 class GithubRepo {
     @JvmField

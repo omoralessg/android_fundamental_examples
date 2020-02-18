@@ -1,11 +1,14 @@
-package com.example.androidfundamental.mvpsample.createtask
+package com.example.androidfundamental.mvpsample.createtask.ui
 
 interface GitHubContract {
     interface View {
         fun setProgressIndicator(active: Boolean)
-        fun showRepositories(repositories: List<String?>?)
+        fun showRepositories(repositories: List<String>)
         fun showAddRepository()
         fun showRepositoryDetails(repositoryId: String?)
+        fun showError(error: String)
+        fun hideLoading()
+        fun showLoading()
     }
 
     interface UserActionsListener {
