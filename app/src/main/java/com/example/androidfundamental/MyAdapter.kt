@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.androidfundamental.util.loadImage
 import kotlin.random.Random
 
 class MyAdapter(var values: MutableList<String>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
@@ -23,12 +24,6 @@ class MyAdapter(var values: MutableList<String>) : RecyclerView.Adapter<MyAdapte
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val string = values.get(position)
         holder.bind(string)
-
-        var r = Random
-        val i = r.nextInt()
-
-
-
     }
 
     fun removeAt(position: Int) {
@@ -40,23 +35,10 @@ class MyAdapter(var values: MutableList<String>) : RecyclerView.Adapter<MyAdapte
         private var firstLine: TextView = view.findViewById(R.id.firstLine)
         private val secondLine: TextView = view.findViewById(R.id.secondLine)
         private val imageView:ImageView = view.findViewById(R.id.icon)
-
-        var r = Random
-        val i = r.nextInt()
-
-
-        // to download some random data
-
-       // ​Glide.with(myListFragment).load("http://lorempixel.com/400/200/sports/"+i+"/").
-     //   ​into(holder.imageView);
-
-
-
-
-
         fun bind(string: String) {
             firstLine.text = string
             secondLine.text = string
+            imageView.loadImage("https://cdn.pixabay.com/photo/2016/11/22/07/27/purdue-university-1848563_1280.jpg")
         }
     }
 }
