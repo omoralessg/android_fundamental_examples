@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.annotation.MainThread
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,8 +15,11 @@ import com.example.androidfundamental.mvpsample.createtask.ui.adapter.RecyclerVi
 import com.example.androidfundamental.mvpsample.createtask.ui.presenter.TaskActivityPresenter
 import com.example.androidfundamental.mvpsample.createtask.ui.view.TaskView
 import com.example.androidfundamental.mvpsample.respositorydetail.RepositoryDetailActivity
+import com.example.androidfundamental.mvpsample.util.JobExecutor
+import com.example.androidfundamental.mvpsample.util.UIThread
 import kotlinx.android.synthetic.main.activity_tasks.*
 import com.example.androidfundamental.retrofitexample.github.GithubRepo
+import io.reactivex.schedulers.Schedulers
 
 class TasksActivity : BaseActivity<TaskActivityPresenter>(), TaskView,
     RecyclerViewAdapter.OnItemClickListener {
@@ -65,7 +69,7 @@ class TasksActivity : BaseActivity<TaskActivityPresenter>(), TaskView,
     }
 
     override fun instantiatePresenter(): TaskActivityPresenter {
-        return TaskActivityPresenter(this)
+        return TaskActivityPresenter(this, UIThread(), JobExecutor())
     }
 
     private fun setupRecyclerView() {

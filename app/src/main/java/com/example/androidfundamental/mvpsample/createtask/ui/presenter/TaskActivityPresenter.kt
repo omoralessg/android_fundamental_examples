@@ -8,13 +8,15 @@ import com.example.androidfundamental.mvpsample.util.Api
 import com.example.androidfundamental.mvpsample.util.PostExecutionThread
 import com.example.androidfundamental.mvpsample.util.ThreadExecutor
 import com.example.androidfundamental.retrofitexample.github.GithubRepo
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class TaskActivityPresenter(taskView: TaskView,val  postExecutionThread: PostExecutionThread,
-                            val threadExecutor: ThreadExecutor) : BasePresenter<TaskView>(taskView),
+class TaskActivityPresenter(
+    taskView: TaskView,
+    private val postExecutionThread: PostExecutionThread,
+    private val threadExecutor: ThreadExecutor
+) : BasePresenter<TaskView>(taskView),
     GitHubContract.UserActionsListener {
 
     @Inject
@@ -30,7 +32,7 @@ class TaskActivityPresenter(taskView: TaskView,val  postExecutionThread: PostExe
             ?.doOnTerminate { view.hideLoading() }
             ?.subscribe(
                 { data -> view.showRepositories(data) },
-                { view.showError(R.string.error.toString()) }
+                { error -> view.showError(error.message ?: R.string.error.toString()) }
             )
     }
 
