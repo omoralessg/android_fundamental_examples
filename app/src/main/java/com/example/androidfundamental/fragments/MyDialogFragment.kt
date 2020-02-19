@@ -13,7 +13,7 @@ import com.example.androidfundamental.R
 /**
  * A simple [Fragment] subclass.
  */
-class MyDialogFragment  // Empty constructor required for DialogFragment
+class MyDialogFragment  // Empty constructor required for CredentialsDialog
     : DialogFragment(), OnEditorActionListener {
     private lateinit var mEditText: EditText
 
