@@ -1,4 +1,5 @@
 package com.example.androidfundamental.mvpsample.respositorydetail
 
-class RepositoryDetailView  {
-}
+import com.example.androidfundamental.mvpsample.base.BaseView
+
+interface RepositoryDetailView : BaseView, RepositoryDetailContract.View

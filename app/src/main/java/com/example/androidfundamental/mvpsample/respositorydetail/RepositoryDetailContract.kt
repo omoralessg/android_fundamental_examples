@@ -1,13 +1,15 @@
 package com.example.androidfundamental.mvpsample.respositorydetail
 
-import com.example.androidfundamental.mvpsample.createtask.ui.model.RepositoryDetails
+import com.example.androidfundamental.retrofitexample.github.GithubRepo
 
 interface RepositoryDetailContract {
-    interface View{
-        fun showDetails(details : RepositoryDetails)
+    interface View {
+        fun showDetails(details: GithubRepo)
+        fun close()
     }
 
-    interface Presenter{
+    interface Presenter {
         fun close()
+        fun showDetails(details: GithubRepo)
     }
 }

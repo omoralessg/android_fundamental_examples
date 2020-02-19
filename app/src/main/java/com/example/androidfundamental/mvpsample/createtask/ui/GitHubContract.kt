@@ -1,11 +1,13 @@
 package com.example.androidfundamental.mvpsample.createtask.ui
 
+import com.example.androidfundamental.retrofitexample.github.GithubRepo
+
+
 interface GitHubContract {
     interface View {
-        fun setProgressIndicator(active: Boolean)
-        fun showRepositories(repositories: List<String>)
+        fun showRepositories(repositories: List<GithubRepo?>?)
         fun showAddRepository()
-        fun showRepositoryDetails(repositoryId: String?)
+        fun showRepositoryDetails(githubRepo: GithubRepo)
         fun showError(error: String)
         fun hideLoading()
         fun showLoading()
@@ -14,6 +16,6 @@ interface GitHubContract {
     interface UserActionsListener {
         fun loadRepositories(forceUpdate: Boolean)
         fun addRepository()
-        fun openRepositoryDetails(repositoryId: String?)
+        fun openRepositoryDetails(githubRepo: GithubRepo)
     }
 }
