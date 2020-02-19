@@ -5,13 +5,16 @@ import com.example.androidfundamental.mvpsample.base.BasePresenter
 import com.example.androidfundamental.mvpsample.createtask.ui.GitHubContract
 import com.example.androidfundamental.mvpsample.createtask.ui.view.TaskView
 import com.example.androidfundamental.mvpsample.util.Api
+import com.example.androidfundamental.mvpsample.util.PostExecutionThread
+import com.example.androidfundamental.mvpsample.util.ThreadExecutor
 import com.example.androidfundamental.retrofitexample.github.GithubRepo
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class TaskActivityPresenter(taskView: TaskView) : BasePresenter<TaskView>(taskView),
+class TaskActivityPresenter(taskView: TaskView,val  postExecutionThread: PostExecutionThread,
+                            val threadExecutor: ThreadExecutor) : BasePresenter<TaskView>(taskView),
     GitHubContract.UserActionsListener {
 
     @Inject
@@ -22,8 +25,8 @@ class TaskActivityPresenter(taskView: TaskView) : BasePresenter<TaskView>(taskVi
         view.showLoading()
         subscription = api
             .repos
-            ?.observeOn(AndroidSchedulers.mainThread())
-            ?.subscribeOn(Schedulers.io())
+            ?.observeOn(postExecutionThread.getScheduler())
+            ?.subscribeOn(Schedulers.from(threadExecutor))
             ?.doOnTerminate { view.hideLoading() }
             ?.subscribe(
                 { data -> view.showRepositories(data) },
