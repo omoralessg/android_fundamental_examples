@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.example.androidfundamental.R
+import com.example.androidfundamental.preferences.SettingsFragment
 import kotlinx.android.synthetic.main.activity_rssfeed.*
 
 class RssfeedActivity : FragmentActivity(), ListFragment.OnItemSelectedListener {
@@ -64,6 +65,9 @@ class RssfeedActivity : FragmentActivity(), ListFragment.OnItemSelectedListener 
                 return true
             }
             R.id.action_settings -> {
+                val settingsFragment = SettingsFragment()
+                manager.beginTransaction()
+                    .replace(R.id.fragment_container, settingsFragment).commit()
                 Toast.makeText(this, "Action Settings selected", Toast.LENGTH_SHORT).show()
                 return true
             }
