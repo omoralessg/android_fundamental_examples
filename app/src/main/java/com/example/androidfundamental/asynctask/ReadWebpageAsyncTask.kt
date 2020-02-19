@@ -34,7 +34,7 @@ class ReadWebpageAsyncTask : Activity() {
             }
             if (response!!.isSuccessful) {
                 try {
-                    return response.body().string()
+                    return response.body()?.string()!!
                 } catch (e: IOException) {
                     e.printStackTrace()
                 }
