@@ -7,6 +7,7 @@ import com.example.androidfundamental.contentprovider.ContactsActivity
 import com.example.androidfundamental.asynctask.ReadWebpageAsyncTask
 import com.example.androidfundamental.fragments.MenuFragmentsActivity
 import com.example.androidfundamental.fundamental.FundamentalActivity
+import com.example.androidfundamental.mvpsample.createtask.ui.TasksActivity
 import com.example.androidfundamental.handler.ProgressTestActivity
 import com.example.androidfundamental.network.NetworkMenuActivity
 import com.example.androidfundamental.roomexample.MainRoomActivity
@@ -38,6 +39,9 @@ class MenuActivity : AppCompatActivity() {
         }
         btn_content_provider.setOnClickListener {
             startActivity(Intent(this, ContactsActivity::class.java))
+        }
+        btn_mvp.setOnClickListener {
+            startActivity(Intent(this, TasksActivity::class.java))
         }
 }
 }
