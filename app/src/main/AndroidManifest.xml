@@ -12,9 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".asynctask.ReadWebpageAsyncTask"></activity>
+        <activity android:name=".handler.ProgressTestActivity" />
+        <activity android:name=".network.NetworkMenuActivity" />
         <activity android:name=".contentprovider.ContactsActivity" />
         <activity android:name=".roomexample.MainRoomActivity" />
-        <activity android:name=".network.NetworkMenuActivity" />
         <activity android:name=".rxjavaexample.MainRxActivity"/>
         <activity android:name=".rxjavaexample.SchedulerActivity"/>
         <activity android:name=".rxjavaexample.ColorsActivity" />
