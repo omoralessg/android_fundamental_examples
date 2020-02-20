@@ -18,8 +18,8 @@ public class DrawableActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawable);
-        ImageView button = (ImageView) findViewById(R.id.image);
-        InputStream resource = getResources().openRawResource(R.raw.unnamed);
+        ImageView button = findViewById(R.id.image);
+        InputStream resource = getResources().openRawResource(R.raw.android_png);
         Bitmap bitmap = BitmapFactory.decodeStream(resource);
         button.setBackground(new MyRoundCornerDrawable(bitmap));
     }
