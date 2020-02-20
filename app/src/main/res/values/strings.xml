@@ -43,4 +43,6 @@
     <string name="url">url</string>
     <string name="ok">Ok</string>
     <string name="preferences">Preferences</string>
+    <string name="customview">Custom View</string>
+    <string name="menu_settings">Settings</string>
 </resources>

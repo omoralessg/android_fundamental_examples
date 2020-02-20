@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.androidfundamental.contentprovider.ContactsActivity
 import com.example.androidfundamental.asynctask.ReadWebpageAsyncTask
+import com.example.androidfundamental.customviews.CustomViewActivity
 import com.example.androidfundamental.fragments.MenuFragmentsActivity
 import com.example.androidfundamental.fundamental.FundamentalActivity
 import com.example.androidfundamental.mvpsample.createtask.ui.TasksActivity
@@ -42,6 +43,9 @@ class MenuActivity : AppCompatActivity() {
         }
         btn_mvp.setOnClickListener {
             startActivity(Intent(this, TasksActivity::class.java))
+        }
+        btn_custom_view.setOnClickListener {
+            startActivity(Intent(this, CustomViewActivity::class.java))
         }
 }
 }
