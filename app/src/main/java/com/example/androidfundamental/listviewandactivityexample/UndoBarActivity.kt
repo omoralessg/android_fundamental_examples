@@ -19,8 +19,10 @@ class UndoBarActivity: AppCompatActivity()  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_undo_bar)
 
+
         // Get the support action bar
         val actionBar = supportActionBar
+        actionBar?.show()
 
         // Set the action bar title, subtitle and elevation
         actionBar!!.title = "Kotlin"
