@@ -43,5 +43,6 @@
     <string name="url">url</string>
     <string name="ok">Ok</string>
     <string name="preferences">Preferences</string>
+    <string name="drawable">Drawable</string>
     <string name="drag">Drag</string>
 </resources>
