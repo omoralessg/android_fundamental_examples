@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.androidfundamental">
-
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -30,6 +29,8 @@
         </service>
         <activity android:name=".wallpaper.SetWallpaperActivity" />
         <activity android:name=".mvpsample.respositorydetail.RepositoryDetailActivity" />
+        <activity android:name=".drawables.DrawableActivity"></activity>
+        <activity android:name=".draganddrop.DragActivity"></activity>
         <activity android:name=".retrofitexample.github.GitHubActivity" />
         <activity android:name=".mvpsample.createtask.ui.TasksActivity" />
         <activity android:name=".asynctask.ReadWebpageAsyncTask" />
@@ -63,10 +64,8 @@
         <activity android:name=".MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
