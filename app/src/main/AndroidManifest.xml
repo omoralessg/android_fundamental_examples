@@ -12,8 +12,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".drawables.DrawableActivity"></activity>
+        <activity android:name=".wallpaper.MyPreferencesActivity"></activity>
+
+        <service
+            android:name=".wallpaper.MyWallpaperService"
+            android:enabled="true"
+            android:label="Wallpaper Example "
+            android:permission="android.permission.BIND_WALLPAPER">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService"></action>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/mywallpaper"></meta-data>
+        </service>
+        <activity android:name=".wallpaper.SetWallpaperActivity" />
         <activity android:name=".mvpsample.respositorydetail.RepositoryDetailActivity" />
+        <activity android:name=".drawables.DrawableActivity"></activity>
         <activity android:name=".draganddrop.DragActivity"></activity>
         <activity android:name=".retrofitexample.github.GitHubActivity" />
         <activity android:name=".mvpsample.createtask.ui.TasksActivity" />
