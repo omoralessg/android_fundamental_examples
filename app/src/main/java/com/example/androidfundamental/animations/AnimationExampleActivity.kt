@@ -20,15 +20,13 @@ class AnimationExampleActivity : AppCompatActivity() {
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_animation_example)
-
         // Get the support action bar
         val actionBar = supportActionBar
         actionBar?.show()
-
         // Set the action bar title, subtitle and elevation
-        actionBar!!.title = "Kotlin"
-        actionBar.subtitle = "Many useful kotlin examples."
-        actionBar.elevation = 4.0F
+        actionBar?.title = "Kotlin"
+        actionBar?.subtitle = "Many useful kotlin examples."
+        actionBar?.elevation = 4.0F
     }
 
     fun startAnimation(view: View) {
@@ -51,7 +49,7 @@ class AnimationExampleActivity : AppCompatActivity() {
             }
             R.id.Button02 -> {
                 // shows how to define a animation via code
-// also use an Interpolator (BounceInterpolator)
+                // also use an Interpolator (BounceInterpolator)
                 val paint = Paint()
                 val aniTextView =
                     findViewById<View>(R.id.textView1) as TextView
