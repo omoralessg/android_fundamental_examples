@@ -18,14 +18,13 @@ class UndoBarActivity: AppCompatActivity()  {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_undo_bar)
-
         // Get the support action bar
         val actionBar = supportActionBar
-
+        actionBar?.show()
         // Set the action bar title, subtitle and elevation
-        actionBar!!.title = "Kotlin"
-        actionBar.subtitle = "Many useful kotlin examples."
-        actionBar.elevation = 4.0F
+        actionBar?.title = "Kotlin"
+        actionBar?.subtitle = "Many useful kotlin examples."
+        actionBar?.elevation = 4.0F
 
         val l = findViewById<View>(R.id.listview) as ListView
         val values = arrayOf(
@@ -45,7 +44,6 @@ class UndoBarActivity: AppCompatActivity()  {
 
         viewContainer = findViewById(R.id.undobar)
         l.setAdapter(adapter)
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
