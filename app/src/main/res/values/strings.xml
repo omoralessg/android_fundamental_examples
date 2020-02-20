@@ -45,4 +45,9 @@
     <string name="preferences">Preferences</string>
     <string name="customview">Custom View</string>
     <string name="menu_settings">Settings</string>
+    <string name="animation">Animation</string>
+    <string name="wallpaper_description">wallpaper</string>
+    <string name="wallpaper">wallpaper</string>
+    <string name="drawable">Drawable</string>
+    <string name="drag">Drag</string>
 </resources>
