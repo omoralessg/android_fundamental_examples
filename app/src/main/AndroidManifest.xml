@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".animations.HitActivity"></activity>
-        <activity android:name=".animations.AnimationExampleActivity"/>
+        <activity android:name=".animations.AnimationExampleActivity" android:theme="@style/AppThemeActionBar" />
         <activity android:name=".mvpsample.respositorydetail.RepositoryDetailActivity" />
         <activity android:name=".retrofitexample.github.GitHubActivity" />
         <activity android:name=".mvpsample.createtask.ui.TasksActivity" />
@@ -36,7 +36,7 @@
         <activity android:name=".fragments.MainActivity" />
         <activity android:name=".databindingexample.view.DataBindingExampleActivity" />
         <activity android:name=".listviewandactivityexample.ExpandableListActivity" />
-        <activity android:name=".listviewandactivityexample.UndoBarActivity" />
+        <activity android:name=".listviewandactivityexample.UndoBarActivity" android:theme="@style/AppThemeActionBar" />
         <activity android:name=".listviewandactivityexample.TwoListItemsActivity" />
         <activity android:name=".listviewandactivityexample.SelectionSingleView" />
         <activity android:name=".listviewandactivityexample.ListExampleActivity" />

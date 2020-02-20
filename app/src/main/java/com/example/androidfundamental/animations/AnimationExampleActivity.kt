@@ -12,13 +12,23 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toolbar
+import androidx.appcompat.app.AppCompatActivity
 import com.example.androidfundamental.R
 
-class AnimationExampleActivity : Activity() {
+class AnimationExampleActivity : AppCompatActivity() {
     /** Called when the activity is first created.  */
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_animation_example)
+
+        // Get the support action bar
+        val actionBar = supportActionBar
+        actionBar?.show()
+
+        // Set the action bar title, subtitle and elevation
+        actionBar!!.title = "Kotlin"
+        actionBar.subtitle = "Many useful kotlin examples."
+        actionBar.elevation = 4.0F
     }
 
     fun startAnimation(view: View) {
