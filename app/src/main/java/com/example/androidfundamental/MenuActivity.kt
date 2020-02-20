@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.example.androidfundamental.animations.AnimationExampleActivity
 import com.example.androidfundamental.contentprovider.ContactsActivity
 import com.example.androidfundamental.asynctask.ReadWebpageAsyncTask
+import com.example.androidfundamental.customviews.CustomViewActivity
 import com.example.androidfundamental.drawables.DrawableActivity
 import com.example.androidfundamental.draganddrop.DragActivity
 import com.example.androidfundamental.fragments.MenuFragmentsActivity
@@ -46,6 +47,9 @@ class MenuActivity : AppCompatActivity() {
         }
         btn_mvp.setOnClickListener {
             startActivity(Intent(this, TasksActivity::class.java))
+        }
+        btn_custom_view.setOnClickListener {
+            startActivity(Intent(this, CustomViewActivity::class.java))
         }
         btn_animation.setOnClickListener {
             startActivity(Intent(this, AnimationExampleActivity::class.java))

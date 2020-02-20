@@ -25,9 +25,10 @@
                 android:name="android.service.wallpaper"
                 android:resource="@xml/mywallpaper"></meta-data>
         </service>
+        <activity android:name=".customviews.CustomViewActivity"></activity>
+        <activity android:name=".mvpsample.respositorydetail.RepositoryDetailActivity" />
         <activity android:name=".animations.HitActivity"></activity>
         <activity android:name=".animations.AnimationExampleActivity" android:theme="@style/AppThemeActionBar" />
-        <activity android:name=".mvpsample.respositorydetail.RepositoryDetailActivity" />
         <activity android:name=".wallpaper.MyPreferencesActivity"></activity>
         <activity android:name=".wallpaper.SetWallpaperActivity" />
         <activity android:name=".drawables.DrawableActivity"></activity>
