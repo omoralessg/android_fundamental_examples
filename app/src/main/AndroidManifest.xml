@@ -12,8 +12,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".wallpaper.MyPreferencesActivity"></activity>
-
         <service
             android:name=".wallpaper.MyWallpaperService"
             android:enabled="true"
@@ -27,8 +25,11 @@
                 android:name="android.service.wallpaper"
                 android:resource="@xml/mywallpaper"></meta-data>
         </service>
-        <activity android:name=".wallpaper.SetWallpaperActivity" />
+        <activity android:name=".animations.HitActivity"></activity>
+        <activity android:name=".animations.AnimationExampleActivity" android:theme="@style/AppThemeActionBar" />
         <activity android:name=".mvpsample.respositorydetail.RepositoryDetailActivity" />
+        <activity android:name=".wallpaper.MyPreferencesActivity"></activity>
+        <activity android:name=".wallpaper.SetWallpaperActivity" />
         <activity android:name=".drawables.DrawableActivity"></activity>
         <activity android:name=".draganddrop.DragActivity"></activity>
         <activity android:name=".retrofitexample.github.GitHubActivity" />
@@ -51,7 +52,7 @@
         <activity android:name=".fragments.MainActivity" />
         <activity android:name=".databindingexample.view.DataBindingExampleActivity" />
         <activity android:name=".listviewandactivityexample.ExpandableListActivity" />
-        <activity android:name=".listviewandactivityexample.UndoBarActivity" />
+        <activity android:name=".listviewandactivityexample.UndoBarActivity" android:theme="@style/AppThemeActionBar" />
         <activity android:name=".listviewandactivityexample.TwoListItemsActivity" />
         <activity android:name=".listviewandactivityexample.SelectionSingleView" />
         <activity android:name=".listviewandactivityexample.ListExampleActivity" />

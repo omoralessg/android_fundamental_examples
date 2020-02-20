@@ -3,6 +3,7 @@ package com.example.androidfundamental
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.androidfundamental.animations.AnimationExampleActivity
 import com.example.androidfundamental.contentprovider.ContactsActivity
 import com.example.androidfundamental.asynctask.ReadWebpageAsyncTask
 import com.example.androidfundamental.drawables.DrawableActivity
@@ -45,6 +46,9 @@ class MenuActivity : AppCompatActivity() {
         }
         btn_mvp.setOnClickListener {
             startActivity(Intent(this, TasksActivity::class.java))
+        }
+        btn_animation.setOnClickListener {
+            startActivity(Intent(this, AnimationExampleActivity::class.java))
         }
         btn_wallpaper.setOnClickListener{
             startActivity(Intent(this, SetWallpaperActivity::class.java))

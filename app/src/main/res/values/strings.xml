@@ -43,6 +43,7 @@
     <string name="url">url</string>
     <string name="ok">Ok</string>
     <string name="preferences">Preferences</string>
+    <string name="animation">Animation</string>
     <string name="wallpaper_description">wallpaper</string>
     <string name="wallpaper">wallpaper</string>
     <string name="drawable">Drawable</string>
