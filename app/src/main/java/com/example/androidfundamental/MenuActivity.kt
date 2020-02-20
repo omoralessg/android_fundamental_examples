@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.example.androidfundamental.contentprovider.ContactsActivity
 import com.example.androidfundamental.asynctask.ReadWebpageAsyncTask
 import com.example.androidfundamental.drawables.DrawableActivity
+import com.example.androidfundamental.draganddrop.DragActivity
 import com.example.androidfundamental.fragments.MenuFragmentsActivity
 import com.example.androidfundamental.fundamental.FundamentalActivity
 import com.example.androidfundamental.mvpsample.createtask.ui.TasksActivity
@@ -46,6 +47,9 @@ class MenuActivity : AppCompatActivity() {
         }
         btn_drawable.setOnClickListener {
             startActivity(Intent(this, DrawableActivity::class.java))
+        }
+        btn_drag.setOnClickListener {
+            startActivity(Intent(this, DragActivity::class.java))
         }
 }
 }
