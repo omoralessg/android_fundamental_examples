@@ -10,7 +10,8 @@ import android.util.Log
 
 class MyWidgetProvider : AppWidgetProvider() {
     override fun onUpdate(
-        context: Context, appWidgetManager: AppWidgetManager,
+        context: Context,
+        appWidgetManager: AppWidgetManager,
         appWidgetIds: IntArray
     ) {
         Log.w(LOG, "onUpdate method called")

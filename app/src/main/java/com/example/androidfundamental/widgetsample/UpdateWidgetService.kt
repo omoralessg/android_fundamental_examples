@@ -12,30 +12,16 @@ import java.util.*
 
 class UpdateWidgetService : Service() {
     override fun onStart(intent: Intent, startId: Int) {
-        val appWidgetManager = AppWidgetManager.getInstance(
-            this
-                .applicationContext
-        )
-        val allWidgetIds = intent
-            .getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS)
+        val appWidgetManager = AppWidgetManager.getInstance(this.applicationContext)
+        val allWidgetIds = intent.getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS)
         for (widgetId in allWidgetIds) { // create some random data
             val number = Random().nextInt(100)
-            val remoteViews = RemoteViews(
-                this
-                    .applicationContext.packageName,
-                R.layout.widget_layout
-            )
+            val remoteViews = RemoteViews(this.applicationContext.packageName, R.layout.widget_layout)
             Log.w("WidgetExample", number.toString())
             // Set the text
-            remoteViews.setTextViewText(
-                R.id.update,
-                "Random: $number"
-            )
+            remoteViews.setTextViewText(R.id.update, "Random: $number")
             // Register an onClickListener
-            val clickIntent = Intent(
-                this.applicationContext,
-                MyWidgetProvider::class.java
-            )
+            val clickIntent = Intent(this.applicationContext, MyWidgetProvider::class.java)
             clickIntent.action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
             clickIntent.putExtra(
                 AppWidgetManager.EXTRA_APPWIDGET_IDS,
