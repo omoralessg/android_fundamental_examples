@@ -27,7 +27,7 @@
                 android:name="android.service.wallpaper"
                 android:resource="@xml/mywallpaper" />
         </service>
-        <receiver android:name="MyStartServiceReceiver" >
+        <receiver android:name=".scheduler.MyStartServiceReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
