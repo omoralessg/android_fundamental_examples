@@ -50,4 +50,5 @@
     <string name="wallpaper">wallpaper</string>
     <string name="drawable">Drawable</string>
     <string name="drag">Drag</string>
+    <string name="services">Services</string>
 </resources>
