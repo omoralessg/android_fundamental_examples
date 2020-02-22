@@ -25,6 +25,11 @@
                 android:name="android.service.wallpaper"
                 android:resource="@xml/mywallpaper"></meta-data>
         </service>
+        <receiver android:name="MyStartServiceReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
         <activity android:name=".customviews.CustomViewActivity"></activity>
         <activity android:name=".mvpsample.respositorydetail.RepositoryDetailActivity" />
         <activity android:name=".animations.HitActivity"></activity>
