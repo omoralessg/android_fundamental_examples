@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.androidfundamental">
-
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -15,6 +14,37 @@
         android:theme="@style/AppTheme">
         <activity android:name=".services.ServicesActivity"></activity>
 
+
+        <receiver android:name=".widgetsample.MyWidgetProvider" >
+            <intent-filter >
+                <action
+                    android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+        </receiver>
+        <service android:name=".widgetsample.UpdateWidgetService"></service>
+
+        <service
+            android:name=".wallpaper.MyWallpaperService"
+            android:enabled="true"
+            android:label="Wallpaper Example "
+            android:permission="android.permission.BIND_WALLPAPER">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService"></action>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/mywallpaper"></meta-data>
+        </service>
+
+
+        <activity android:name=".wallpaper.MyPreferencesActivity"></activity>
+        <activity android:name=".wallpaper.SetWallpaperActivity" />
+        <activity android:name=".mvpsample.respositorydetail.RepositoryDetailActivity" />
         <service
             android:name=".wallpaper.MyWallpaperService"
             android:enabled="true"
@@ -33,13 +63,10 @@
             android:label="Word service"></service>
 
         <activity android:name=".customviews.CustomViewActivity" />
-        <activity android:name=".mvpsample.respositorydetail.RepositoryDetailActivity" />
         <activity android:name=".animations.HitActivity" />
         <activity
             android:name=".animations.AnimationExampleActivity"
             android:theme="@style/AppThemeActionBar" />
-        <activity android:name=".wallpaper.MyPreferencesActivity" />
-        <activity android:name=".wallpaper.SetWallpaperActivity" />
         <activity android:name=".drawables.DrawableActivity" />
         <activity android:name=".draganddrop.DragActivity" />
         <activity android:name=".retrofitexample.github.GitHubActivity" />
@@ -77,10 +104,8 @@
         <activity android:name=".MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
