@@ -48,6 +48,9 @@ class MenuActivity : AppCompatActivity() {
         btn_mvp.setOnClickListener {
             startActivity(Intent(this, TasksActivity::class.java))
         }
+        btn_wallpaper.setOnClickListener{
+            startActivity(Intent(this, SetWallpaperActivity::class.java))
+        }
         btn_custom_view.setOnClickListener {
             startActivity(Intent(this, CustomViewActivity::class.java))
         }
