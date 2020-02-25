@@ -140,4 +140,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_mvp" />
 
+    <Button
+        android:id="@+id/btn_services"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/services"
+        app:layout_constraintBottom_toTopOf="@+id/btn_wallpaper"
+        app:layout_constraintEnd_toStartOf="@+id/btn_asynctask"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

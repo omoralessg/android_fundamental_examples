@@ -15,6 +15,7 @@ import com.example.androidfundamental.mvpsample.createtask.ui.TasksActivity
 import com.example.androidfundamental.handler.ProgressTestActivity
 import com.example.androidfundamental.network.NetworkMenuActivity
 import com.example.androidfundamental.roomexample.MainRoomActivity
+import com.example.androidfundamental.services.ServicesActivity
 import com.example.androidfundamental.wallpaper.SetWallpaperActivity
 import kotlinx.android.synthetic.main.activity_menu.*
 
@@ -26,13 +27,13 @@ class MenuActivity : AppCompatActivity() {
 
         btn_fundamental.setOnClickListener {
             startActivity(Intent(this, FundamentalActivity::class.java))
-            }
+        }
         btn_android_network.setOnClickListener {
             startActivity(Intent(this, NetworkMenuActivity::class.java))
         }
         btn_fragments_toolbar.setOnClickListener {
             startActivity(Intent(this, MenuFragmentsActivity::class.java))
-    }
+        }
         btn_handler.setOnClickListener {
             startActivity(Intent(this, ProgressTestActivity::class.java))
         }
@@ -57,7 +58,7 @@ class MenuActivity : AppCompatActivity() {
         btn_animation.setOnClickListener {
             startActivity(Intent(this, AnimationExampleActivity::class.java))
         }
-        btn_wallpaper.setOnClickListener{
+        btn_wallpaper.setOnClickListener {
             startActivity(Intent(this, SetWallpaperActivity::class.java))
         }
         btn_drawable.setOnClickListener {
@@ -66,5 +67,8 @@ class MenuActivity : AppCompatActivity() {
         btn_drag.setOnClickListener {
             startActivity(Intent(this, DragActivity::class.java))
         }
-}
+        btn_services.setOnClickListener {
+            startActivity(Intent(this, ServicesActivity::class.java))
+        }
+    }
 }
