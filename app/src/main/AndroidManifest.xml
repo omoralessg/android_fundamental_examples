@@ -13,7 +13,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".services.ServicesActivity"></activity>
+        <receiver android:name=".widgetsample.MyWidgetProvider" >
+            <intent-filter >
+                <action
+                    android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
 
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+        </receiver>
+        <service android:name=".widgetsample.UpdateWidgetService"></service>
         <service
             android:name=".wallpaper.MyWallpaperService"
             android:enabled="true"
@@ -22,7 +32,6 @@
             <intent-filter>
                 <action android:name="android.service.wallpaper.WallpaperService" />
             </intent-filter>
-
             <meta-data
                 android:name="android.service.wallpaper"
                 android:resource="@xml/mywallpaper" />
@@ -45,6 +54,22 @@
         <activity android:name=".wallpaper.SetWallpaperActivity" />
         <activity android:name=".drawables.DrawableActivity" />
         <activity android:name=".draganddrop.DragActivity" />
+        <service
+            android:name=".wallpaper.MyWallpaperService"
+            android:enabled="true"
+            android:label="Wallpaper Example "
+            android:permission="android.permission.BIND_WALLPAPER">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/mywallpaper" />
+        </service>
+        <service
+            android:name=".services.LocalWordService"
+            android:label="Word service"></service>
         <activity android:name=".retrofitexample.github.GitHubActivity" />
         <activity android:name=".mvpsample.createtask.ui.TasksActivity" />
         <activity android:name=".asynctask.ReadWebpageAsyncTask" />
