@@ -10,7 +10,8 @@ class  ConverterUtil {
         }
 
         fun convertCelsiusToFahrenheit(grade: Int) : Float{
-            return (grade * (9/5) +32).toFloat()
+            val grades = (grade * (9/5)) +32
+            return grades.toFloat()
         }
 
 

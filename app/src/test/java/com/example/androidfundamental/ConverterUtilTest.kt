@@ -11,7 +11,7 @@ class ConverterUtilTest {
         val expected = 212f
         // use this method because float is not precise
         assertEquals("Conversion from celsius to fahrenheit failed",
-            expected.toDouble(), actual.toDouble(), 0.001)
+            expected, actual, 0.001f)
     }
 
     @Test
@@ -21,6 +21,6 @@ class ConverterUtilTest {
         val expected = 100f
         // use this method because float is not precise
         assertEquals("Conversion from celsius to fahrenheit failed",
-            expected.toDouble(), actual.toDouble(), 0.001)
+            expected, actual, 0.001f)
     }
 }
