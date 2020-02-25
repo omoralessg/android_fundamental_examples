@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.androidfundamental">
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -12,18 +14,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".services.ServicesActivity"></activity>
-        <receiver android:name=".widgetsample.MyWidgetProvider" >
-            <intent-filter >
-                <action
-                    android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+        <activity android:name=".traceview.TraceActivity"></activity>
+        <activity android:name=".services.ServicesActivity" />
+
+        <receiver android:name=".widgetsample.MyWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
 
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_info" />
         </receiver>
-        <service android:name=".widgetsample.UpdateWidgetService"></service>
+
+        <service android:name=".widgetsample.UpdateWidgetService" />
         <service
             android:name=".wallpaper.MyWallpaperService"
             android:enabled="true"
@@ -32,19 +36,24 @@
             <intent-filter>
                 <action android:name="android.service.wallpaper.WallpaperService" />
             </intent-filter>
+
             <meta-data
                 android:name="android.service.wallpaper"
                 android:resource="@xml/mywallpaper" />
         </service>
-        <receiver android:name=".scheduler.MyStartServiceReceiver" >
+
+        <receiver android:name=".scheduler.MyStartServiceReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-        <activity android:name=".customviews.CustomViewActivity"></activity>
+
+        <activity android:name=".customviews.CustomViewActivity" />
+
         <service
             android:name=".services.LocalWordService"
-            android:label="Word service"></service>
+            android:label="Word service" />
+
         <activity android:name=".mvpsample.respositorydetail.RepositoryDetailActivity" />
         <activity android:name=".animations.HitActivity" />
         <activity
@@ -54,6 +63,7 @@
         <activity android:name=".wallpaper.SetWallpaperActivity" />
         <activity android:name=".drawables.DrawableActivity" />
         <activity android:name=".draganddrop.DragActivity" />
+
         <service
             android:name=".wallpaper.MyWallpaperService"
             android:enabled="true"
@@ -69,7 +79,8 @@
         </service>
         <service
             android:name=".services.LocalWordService"
-            android:label="Word service"></service>
+            android:label="Word service" />
+
         <activity android:name=".retrofitexample.github.GitHubActivity" />
         <activity android:name=".mvpsample.createtask.ui.TasksActivity" />
         <activity android:name=".asynctask.ReadWebpageAsyncTask" />
@@ -105,8 +116,10 @@
         <activity android:name=".MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

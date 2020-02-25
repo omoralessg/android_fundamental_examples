@@ -70,5 +70,8 @@ class MenuActivity : AppCompatActivity() {
         btn_services.setOnClickListener {
             startActivity(Intent(this, ServicesActivity::class.java))
         }
+        btn_trace.setOnClickListener {
+            startActivity(Intent(this, TracerActivity::class.java))
+        }
     }
 }

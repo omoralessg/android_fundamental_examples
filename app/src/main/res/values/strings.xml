@@ -52,4 +52,9 @@
     <string name="drawable">Drawable</string>
     <string name="drag">Drag</string>
     <string name="services">Services</string>
+    <string name="app_name_trace">Traceview Example</string>
+    <string name="trace">Traceview Example</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world_trace">Hello world!</string>
+    <string name="number_template"><b>Random number: %1$s</b></string>
 </resources>
