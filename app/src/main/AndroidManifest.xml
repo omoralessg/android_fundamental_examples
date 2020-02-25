@@ -13,8 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".services.ServicesActivity"></activity>
-
-
         <receiver android:name=".widgetsample.MyWidgetProvider" >
             <intent-filter >
                 <action
@@ -26,25 +24,36 @@
                 android:resource="@xml/widget_info" />
         </receiver>
         <service android:name=".widgetsample.UpdateWidgetService"></service>
-
         <service
             android:name=".wallpaper.MyWallpaperService"
             android:enabled="true"
             android:label="Wallpaper Example "
             android:permission="android.permission.BIND_WALLPAPER">
             <intent-filter>
-                <action android:name="android.service.wallpaper.WallpaperService"></action>
+                <action android:name="android.service.wallpaper.WallpaperService" />
             </intent-filter>
-
             <meta-data
                 android:name="android.service.wallpaper"
-                android:resource="@xml/mywallpaper"></meta-data>
+                android:resource="@xml/mywallpaper" />
         </service>
-
-
-        <activity android:name=".wallpaper.MyPreferencesActivity"></activity>
-        <activity android:name=".wallpaper.SetWallpaperActivity" />
+        <receiver android:name=".scheduler.MyStartServiceReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <activity android:name=".customviews.CustomViewActivity"></activity>
+        <service
+            android:name=".services.LocalWordService"
+            android:label="Word service"></service>
         <activity android:name=".mvpsample.respositorydetail.RepositoryDetailActivity" />
+        <activity android:name=".animations.HitActivity" />
+        <activity
+            android:name=".animations.AnimationExampleActivity"
+            android:theme="@style/AppThemeActionBar" />
+        <activity android:name=".wallpaper.MyPreferencesActivity" />
+        <activity android:name=".wallpaper.SetWallpaperActivity" />
+        <activity android:name=".drawables.DrawableActivity" />
+        <activity android:name=".draganddrop.DragActivity" />
         <service
             android:name=".wallpaper.MyWallpaperService"
             android:enabled="true"
@@ -61,14 +70,6 @@
         <service
             android:name=".services.LocalWordService"
             android:label="Word service"></service>
-
-        <activity android:name=".customviews.CustomViewActivity" />
-        <activity android:name=".animations.HitActivity" />
-        <activity
-            android:name=".animations.AnimationExampleActivity"
-            android:theme="@style/AppThemeActionBar" />
-        <activity android:name=".drawables.DrawableActivity" />
-        <activity android:name=".draganddrop.DragActivity" />
         <activity android:name=".retrofitexample.github.GitHubActivity" />
         <activity android:name=".mvpsample.createtask.ui.TasksActivity" />
         <activity android:name=".asynctask.ReadWebpageAsyncTask" />
